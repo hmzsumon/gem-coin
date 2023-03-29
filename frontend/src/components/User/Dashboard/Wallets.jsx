@@ -22,10 +22,10 @@ const Wallets = () => {
 				</div>
 			) : (
 				<div className='h-full pb-20'>
-					<h1 className='my-4 text-xl font-semibold text-gray-100'>Wallets</h1>
+					<h1 className='my-4 text-xl font-semibold text-gray-100'>Wallet</h1>
 					<div className='space-y-4 '>
 						<WalletCard01 user={user} />
-						<div className=' grid grid-cols-2 md:grid-cols-3 gap-4'>
+						<div className='grid grid-cols-2 gap-4 md:grid-cols-3'>
 							<WalletCard02 />
 							{/* <WalletCard03 /> */}
 							<Musd />

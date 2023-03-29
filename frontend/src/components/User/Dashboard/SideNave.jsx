@@ -34,7 +34,7 @@ export default function SideNave() {
 		// },
 		{
 			id: 11,
-			name: 'Wallets',
+			name: 'Wallet',
 			icon: <GiWallet />,
 			link: () => navigate('/dashboard'),
 		},
@@ -56,13 +56,6 @@ export default function SideNave() {
 			icon: <GiMining />,
 			link: () => navigate('/dashboard'),
 		},
-		{
-			id: 8,
-			name: 'Trade',
-			icon: <FcCurrencyExchange />,
-			link: () => navigate('/dashboard'),
-		},
-
 		{
 			id: 10,
 			name: 'History',
@@ -94,12 +87,12 @@ export default function SideNave() {
 			icon: <FcSettings />,
 			link: () => navigate('/dashboard'),
 		},
-		{
-			id: 7,
-			name: 'Verification',
-			icon: <MdOutlineDomainVerification />,
-			link: () => navigate('/dashboard'),
-		},
+		// {
+		// 	id: 7,
+		// 	name: 'Verification',
+		// 	icon: <MdOutlineDomainVerification />,
+		// 	link: () => navigate('/dashboard'),
+		// },
 	];
 
 	const [logout, { isSuccess }] = useLogoutMutation();
@@ -125,7 +118,7 @@ export default function SideNave() {
 	const list = (anchor) => (
 		<Box
 			sx={{
-				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 170,
+				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 150,
 				backgroundColor: '#0F141D',
 			}}
 			role='presentation'
@@ -135,7 +128,7 @@ export default function SideNave() {
 			<div className='px-6 py-5'>
 				<h1 className='text-sm font-semibold text-gray-100'>{user?.name}</h1>
 				<h1 className='text-xs font-semibold text-gray-100'>{user?.email}</h1>
-				<h1 className='text-xs font-semibold text-red-500'>Not Verify</h1>
+				{/* <h1 className='text-xs font-semibold text-red-500'>Not Verify</h1> */}
 			</div>
 			<Divider />
 			<List>
@@ -147,9 +140,9 @@ export default function SideNave() {
 						onClick={item.link}
 					>
 						<ListItemButton>
-							<ListItemIcon className=' text-red-500'>
-								<span className=' text-white'>{item.icon}</span>
-							</ListItemIcon>
+							{/* <ListItemIcon className='text-red-500 '>
+								<span className='text-white '>{item.icon}</span>
+							</ListItemIcon> */}
 							<ListItemText primary={item.name} />
 						</ListItemButton>
 					</ListItem>
