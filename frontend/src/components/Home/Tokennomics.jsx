@@ -12,6 +12,7 @@ const tokenData = [
 		title: 'Allocated for ICO',
 		value: '700,000,000 GEM',
 	},
+
 	{
 		id: 3,
 		title: 'Hard Cap',
@@ -37,22 +38,12 @@ const Tokennomics = () => {
 	return (
 		<div className='mx-4 my-16 md:mx-10'>
 			<div className='space-y-3 '>
-				<h1 className='text-3xl tracking-wide text-center uppercase '>
-					Tokennomics
-				</h1>
+				<h1 className='text-3xl tracking-wide text-center uppercase '>Token</h1>
 				<p className='text-sm tracking-wide text-center text-gray-500'>
-					Our Coin with a Real World use case created on the Blockchain network.
+					Breakdown of our Token Distribution
 				</p>
 			</div>
-			<div className='my-10 '>
-				<p className='text-sm tracking-wide text-center text-gray-500'>
-					Genuine Electronic Money Coin Smart is a metal currency of GEM Coin.
-					It is a decentralized one-stop platform on Binance Smart Chain -
-					focusing on low transaction costs, high transaction speeds as well as
-					a simplistic and straightforward user experience via a highly
-					intuitive user interface
-				</p>
-			</div>
+
 			<div className='border '>
 				<div className='grid grid-cols-2 py-2 text-xs text-white list-none md:text-sm bg-slate-800 '>
 					<li className='ml-4 md:ml-20'>Description</li>

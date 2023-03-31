@@ -23,8 +23,8 @@ const navItems = [
 	},
 	{
 		id: 4,
-		title: 'Tokennomics',
-		path: '/tokennomics',
+		title: 'Token',
+		path: '/token',
 	},
 	{
 		id: 5,

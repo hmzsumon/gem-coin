@@ -52,7 +52,7 @@ export default function SideNave() {
 		},
 		{
 			id: 9,
-			name: 'Buy Pack',
+			name: 'Minning',
 			icon: <GiMining />,
 			link: () => navigate('/dashboard'),
 		},
