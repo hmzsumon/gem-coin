@@ -3,13 +3,22 @@ import TemplateLayout from '../layouts/TemplateLayout';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
-import { Button, Checkbox, FormControlLabel, Grid } from '@mui/material';
+import {
+	Button,
+	Checkbox,
+	FormControlLabel,
+	Grid,
+	IconButton,
+	InputAdornment,
+} from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 import { useRegisterMutation } from '../features/auth/authApi';
 import { toast } from 'react-toastify';
 import { BeatLoader } from 'react-spinners';
 import { useNavigate } from 'react-router-dom';
+
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const countries = [
 	{ code: 'AD', label: 'Andorra', phone: '376' },
@@ -454,6 +463,15 @@ const Signup = () => {
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 
+	const [passwordShown, setPasswordShown] = useState(false);
+
+	// Password toggle handler
+	const togglePassword = () => {
+		// When the handler is invoked
+		// inverse the boolean state of passwordShown
+		setPasswordShown(!passwordShown);
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (password !== confirmPassword) {
@@ -600,12 +618,25 @@ const Signup = () => {
 							fullWidth
 							name='password'
 							label='Password'
-							type='password'
+							type={passwordShown ? 'text' : 'password'}
 							id='password'
 							autoComplete='current-password'
 							size='small'
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
+							InputProps={{
+								endAdornment: (
+									<InputAdornment position='end'>
+										<IconButton
+											aria-label='toggle password visibility'
+											onClick={togglePassword}
+											edge='end'
+										>
+											{passwordShown ? <Visibility /> : <VisibilityOff />}
+										</IconButton>
+									</InputAdornment>
+								),
+							}}
 						/>
 						{/* confirm Password */}
 						<TextField
@@ -614,12 +645,25 @@ const Signup = () => {
 							fullWidth
 							name='confirmPassword'
 							label='Confirm Password'
-							type='password'
+							type={passwordShown ? 'text' : 'password'}
 							id='confirmPassword'
 							autoComplete='current-password'
 							size='small'
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}
+							InputProps={{
+								endAdornment: (
+									<InputAdornment position='end'>
+										<IconButton
+											aria-label='toggle password visibility'
+											onClick={togglePassword}
+											edge='end'
+										>
+											{passwordShown ? <Visibility /> : <VisibilityOff />}
+										</IconButton>
+									</InputAdornment>
+								),
+							}}
 						/>
 
 						<FormControlLabel
