@@ -21,14 +21,17 @@ const Everything = () => {
 						<div className='my-10 space-y-3 '>
 							<div className='flex items-center'>
 								<input
-									checked
+									defaultChecked
 									id='disabled-radio-2'
 									type='radio'
-									value=''
+									defaultValue='Initial value'
 									name='disabled-radio'
 									className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
 								/>
-								<label for='disabled-radio-2' class='ml-2 text-sm font-medium '>
+								<label
+									htmlFor='disabled-radio-2'
+									className='ml-2 text-sm font-medium '
+								>
 									Conversion rates are based on GEMCoin Price Index and the
 									price indices of other digital assets.
 								</label>
@@ -37,12 +40,12 @@ const Everything = () => {
 								<input
 									id='disabled-radio-2'
 									type='radio'
-									value=''
+									defaultValue='Initial value'
 									name='disabled-radio'
 									className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
 								/>
 								<label
-									for='disabled-radio-2'
+									htmlFor='disabled-radio-2'
 									className='ml-2 text-sm font-medium '
 								>
 									Conversion rates are based on GEMCoin Price Index and the

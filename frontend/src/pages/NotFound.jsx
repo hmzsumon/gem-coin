@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import notFound from '../assets/images/404-not-found.svg';
+import { useNavigate } from 'react-router-dom';
 
 const NotFound = () => {
+	const navigate = useNavigate();
+
 	return (
-		<div className='flex flex-col items-center justify-center gap-4 mt-16 bg-slate-900'>
+		<div className='flex flex-col items-center justify-center h-full gap-4 py-16 bg-slate-900'>
 			<div className='w-11/12'>
 				<img
 					draggable='false'
@@ -12,12 +15,12 @@ const NotFound = () => {
 					alt='Page Not Found'
 				/>
 			</div>
-			<Link
-				to='/'
+			<button
 				className='px-4 py-2 text-white uppercase bg-blue-500 rounded-sm shadow hover:shadow-lg'
+				onClick={() => navigate(-1)}
 			>
 				Back To Home
-			</Link>
+			</button>
 		</div>
 	);
 };
