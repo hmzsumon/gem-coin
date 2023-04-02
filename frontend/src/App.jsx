@@ -20,11 +20,23 @@ import Receive from './components/User/Wallet01/Receive';
 import Mining from './components/User/Mining/Mining';
 
 import AdminDashboard from './components/Admin/Dashboard/Dashboard';
-import PriceList from './components/User/Dashboard/PriceList';
+import PriceList from './components/Admin/Price/PriceList';
+import CreatePrice from './components/Admin/Price/CreatePrice';
+import BuyHistory from './components/User/Wallet01/BuyHistory';
+import DepositList from './components/Admin/Deposit/DepositList';
+import { ThemeProvider, createTheme } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+import EditDeposit from './components/Admin/Deposit/EditDeposit';
+
+const darkTheme = createTheme({
+	palette: {
+		mode: 'dark',
+	},
+});
 
 const App = () => {
 	return (
-		<div>
+		<>
 			<Routes>
 				<Route path='/' element={<HomePage />} />
 				<Route path='/about' element={<AboutPage />} />
@@ -37,6 +49,10 @@ const App = () => {
 				<Route element={<PrivetRoute isAdmin={true} />}>
 					<Route path='/admin/dashboard' element={<AdminDashboard />} />
 					<Route path='/admin/prices' element={<PriceList />} />
+					<Route path='/create-price' element={<CreatePrice />} />
+
+					<Route path='/admin/deposits' element={<DepositList />} />
+					<Route path='/admin/deposit/edit/:id' element={<EditDeposit />} />
 				</Route>
 
 				{/* User Route */}
@@ -49,12 +65,13 @@ const App = () => {
 					<Route path='/receive' element={<Receive />} />
 
 					<Route path='/mining' element={<Mining />} />
+					<Route path='/buy-history' element={<BuyHistory />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>
 			</Routes>
 			<ToastContainer />
-		</div>
+		</>
 	);
 };
 

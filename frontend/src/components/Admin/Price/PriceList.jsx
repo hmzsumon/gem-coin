@@ -77,7 +77,7 @@ const PriceList = () => {
 					<FadeLoader color={'#fbbf24'} />
 				</div>
 			) : (
-				<div className='p-4'>
+				<div className='p-4 text-white'>
 					<div className='my-4'>
 						<NavLink
 							to='/create-price'

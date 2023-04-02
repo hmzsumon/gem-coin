@@ -1,14 +1,14 @@
 import React from 'react';
-import { useGetDepositsQuery } from '../../features/pxc.js/pxcApi';
+import { useGetDepositsQuery } from '../../../features/pxc.js/pxcApi';
 import Layout from '../Dashboard/Layout/Layout';
-import { formatDate } from '../../utils/functions';
+import { formatDate } from '../../../utils/functions';
 
 const BuyHistory = () => {
 	const { data } = useGetDepositsQuery();
 	const { deposits } = data || [];
 	return (
 		<Layout>
-			<div className='h-screen '>
+			<div className='h-screen text-white '>
 				<div className='w-11/12 px-2 py-4 mx-auto space-y-4 rounded-md bg-slate-800 md:w-9/12'>
 					<h1>Buy History</h1>
 					<div>

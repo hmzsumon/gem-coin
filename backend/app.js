@@ -25,7 +25,7 @@ const subscription = require('./routes/subscriptionRoute');
 const user = require('./routes/userRoute');
 const transaction = require('./routes/transactionRoute');
 const coin = require('./routes/payunxCoinRoute');
-const pxcPrice = require('./routes/pxcPriceRoute');
+// const pxcPrice = require('./routes/pxcPriceRoute');
 const deposit = require('./routes/depositRoute');
 const mining = require('./routes/miningRoute');
 const email = require('./routes/emailRoute');
@@ -33,12 +33,14 @@ const notice = require('./routes/noticeRoute');
 const withdraw = require('./routes/withdrawRoute');
 const usdx = require('./routes/usdxRoute');
 const tickets = require('./routes/ticketRoute');
+const price = require('./routes/priceRoute');
+const company = require('./routes/companyRoute');
 
 app.use('/api/v1', subscription);
 app.use('/api/v1', user);
 app.use('/api/v1', transaction);
 app.use('/api/v1', coin);
-app.use('/api/v1', pxcPrice);
+// app.use('/api/v1', pxcPrice);
 app.use('/api/v1', deposit);
 app.use('/api/v1', mining);
 app.use('/api/v1', email);
@@ -46,6 +48,8 @@ app.use('/api/v1', notice);
 app.use('/api/v1', withdraw);
 app.use('/api/v1', usdx);
 app.use('/api/v1', tickets);
+app.use('/api/v1', price);
+app.use('/api/v1', company);
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 

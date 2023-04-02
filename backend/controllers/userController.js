@@ -80,8 +80,10 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		if (!ref_user) {
 			new Error('User not found');
 		}
-		ref_user.referral_bonus += 5;
-		ref_user.bonus_balance += 5;
+		ref_user.referral_bonus += 1;
+		ref_user.bonus_balance += 1;
+		ref_user.balance += 1;
+		ref_user.gem_coin += 4;
 		await ref_user.save();
 	}
 
@@ -108,6 +110,8 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		sponsor_id: referral_id ? referral_id : null,
 		sinUp_bonus: 25,
 		bonus_balance: 25,
+		balance: 25,
+		gem_coin: 100,
 	});
 
 	sendToken(newUser, 201, res);
