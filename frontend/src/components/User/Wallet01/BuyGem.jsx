@@ -36,7 +36,7 @@ const BuyGem = () => {
 			toast.error(error.data.message);
 		}
 		if (isSuccess) {
-			toast.success('PXC bought successfully');
+			toast.success('Gem bought successfully');
 			navigate('/buy-history');
 		}
 	}, [isSuccess, isError, error, navigate]);

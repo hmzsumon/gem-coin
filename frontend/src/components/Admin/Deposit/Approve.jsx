@@ -78,13 +78,13 @@ const Approve = ({ id }) => {
 	// useEffect
 	React.useEffect(() => {
 		if (a_success) {
-			toast.success('Verification Approved');
+			toast.success(' Deposit Approved Successfully');
 		}
 		if (a_isError) {
 			toast.error(a_error.data.message);
 		}
 		if (c_success) {
-			toast.success('Verification Rejected');
+			toast.success(' Deposit Cancelled Successfully');
 		}
 		if (c_isError) {
 			toast.error(c_error.data.message);
