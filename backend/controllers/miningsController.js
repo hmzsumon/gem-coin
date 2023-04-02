@@ -28,9 +28,9 @@ exports.createMining = catchAsyncErrors(async (req, res, next) => {
 	const miningId = `G${id}`;
 	user.mining_id = miningId;
 	user.balance -= 50;
-	const pxc = 10 / lastPrice;
+	const pxc = 50 / lastPrice;
 	user.gem_coin -= pxc;
-	createTransaction(user._id, 'cashOut', 10, 'Mining', 'Create Mining ID');
+	createTransaction(user._id, 'cashOut', 50, 'Mining', 'Create Mining ID');
 	await user.save();
 
 	const mining = await Mining.create({
