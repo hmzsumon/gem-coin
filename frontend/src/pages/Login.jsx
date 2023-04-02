@@ -13,10 +13,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useLoginMutation } from '../features/auth/authApi';
 import { toast } from 'react-toastify';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const Login = () => {
 	const navigate = useNavigate();
-	const [login, { isLoading, isSuccess, isError, error }] = useLoginMutation();
+	const [login, { data, isLoading, isSuccess, isError, error }] =
+		useLoginMutation();
+	const { user } = data || {};
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -40,12 +43,16 @@ const Login = () => {
 	useEffect(() => {
 		if (isSuccess) {
 			toast.success('Login successful');
-			navigate('/dashboard');
+			if (user.role === 'admin') {
+				navigate('/admin/dashboard');
+			} else {
+				navigate('/dashboard');
+			}
 		}
 		if (isError) {
 			toast.error(error.data.message);
 		}
-	}, [isSuccess, isError, error, navigate]);
+	}, [isSuccess, isError, error, navigate, user]);
 	return (
 		<TemplateLayout>
 			<div className='px-4 py-16 md:p-10 bg-slate-800'>
@@ -103,7 +110,7 @@ const Login = () => {
 							variant='contained'
 							sx={{ mt: 3, mb: 2 }}
 						>
-							Sign In
+							{isLoading ? <ClipLoader color='#fff' size={20} /> : 'Login'}
 						</Button>
 						<Grid container>
 							<Grid item xs>

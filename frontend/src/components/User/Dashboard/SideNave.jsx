@@ -54,7 +54,7 @@ export default function SideNave() {
 			id: 9,
 			name: 'Minning',
 			icon: <GiMining />,
-			link: () => navigate('/dashboard'),
+			link: () => navigate('/mining'),
 		},
 		{
 			id: 10,

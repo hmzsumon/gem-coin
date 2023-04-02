@@ -1,6 +1,6 @@
 import React from 'react';
-import { useGetMiningQuery } from '../../features/mining/miningApi';
-import bitImg from '../../assets/mining/bit.png';
+import { useGetMiningQuery } from '../../../features/mining/miningApi';
+import bitImg from '../../../assets/mining/bit.png';
 
 const MiningStatus = () => {
 	const { data } = useGetMiningQuery();

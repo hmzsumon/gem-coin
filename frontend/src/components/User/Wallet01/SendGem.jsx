@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useSendPxcMutation } from '../../features/pxc.js/pxcApi';
-import ButtonLoaderCircle from '../../global/ButtonLoaderCircle';
+import { useSendPxcMutation } from '../../../features/pxc.js/pxcApi';
+import ButtonLoaderCircle from '../../../global/ButtonLoaderCircle';
 import Layout from '../Dashboard/Layout/Layout';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-const SendPxc = () => {
+const SendGem = () => {
 	const navigate = useNavigate();
 	const [sendPxc, { isLoading, isError, isSuccess, error }] =
 		useSendPxcMutation();
@@ -35,7 +35,7 @@ const SendPxc = () => {
 	}, [isSuccess, isError, error, navigate]);
 	return (
 		<Layout>
-			<div className='w-11/12 px-2 py-4 mx-auto space-y-4 rounded-md bg-slate-800 md:w-9/12'>
+			<div className='w-11/12 px-2 py-4 mx-auto space-y-4 text-white rounded-md bg-slate-800 md:w-9/12'>
 				<div>
 					<h2 className='text-xl font-extrabold text-center text-gray-100 md:text-3xl'>
 						Wallet to Wallet Transfer
@@ -99,7 +99,7 @@ const SendPxc = () => {
 						) : (
 							<button
 								type='submit'
-								className='relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-transparent rounded-md group hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500  disabled:text-gray-700 disabled:cursor-not-allowed '
+								className='relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-transparent rounded-md group hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:text-gray-700 disabled:cursor-not-allowed '
 								disabled={isLoading || user?.balance <= 2}
 							>
 								<span className='absolute inset-y-0 left-0 flex items-center pl-3'></span>
@@ -123,4 +123,4 @@ const SendPxc = () => {
 	);
 };
 
-export default SendPxc;
+export default SendGem;

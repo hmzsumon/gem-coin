@@ -209,3 +209,20 @@ html {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
+
+/* Admin Style */
+/* Header */
+header {
+	z-index: 100;
+}
+
+.mobile-menu {
+	transform: translateX(-100%);
+	top: 75px;
+	transition: transform 0.3s ease-in-out;
+}
+.mobile-menu.is-active {
+	position: fixed;
+	transform: translateX(0);
+}
+/* Header */

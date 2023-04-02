@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../Dashboard/Layout/Layout';
 import { toast } from 'react-toastify';
-import { methods } from '../../utils/methods';
-import CopyToClipboardButton from '../../global/CopyToClipboardButton';
-import { useBuyPxcMutation } from '../../features/pxc.js/pxcApi';
+import { methods } from '../../../utils/methods';
+import CopyToClipboardButton from '../../../global/CopyToClipboardButton';
+import { useBuyPxcMutation } from '../../../features/pxc.js/pxcApi';
 import BeatLoader from 'react-spinners/BeatLoader';
 import { useNavigate } from 'react-router-dom';
 
-const BuyPxc = () => {
+const BuyGem = () => {
 	const navigate = useNavigate();
 	const [buyPxc, { isLoading, isError, isSuccess, error }] =
 		useBuyPxcMutation();
@@ -43,10 +43,10 @@ const BuyPxc = () => {
 
 	return (
 		<Layout>
-			<div className=''>
+			<div className='text-white '>
 				<div className='w-11/12 px-2 py-4 mx-auto space-y-4 rounded-md bg-slate-800 md:w-9/12'>
 					<div className='text-sm font-bold text-center md:text-2xl'>
-						<h1>Buy Payunx Coin</h1>
+						<h1>Buy GEM Coin</h1>
 					</div>
 					{/* Next False */}
 					{!next && (
@@ -176,4 +176,4 @@ const BuyPxc = () => {
 	);
 };
 
-export default BuyPxc;
+export default BuyGem;

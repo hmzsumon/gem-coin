@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Layout from '../Dashboard/Layout/Layout';
-import qr from '../../assets/qr/qrcode1.png';
-import CopyToClipboardButton from '../../global/CopyToClipboardButton';
+import qr from '../../../assets/qr/qrcode1.png';
+
+import CopyToClipboardButton from '../../../global/CopyToClipboardButton';
 
 const Receive = () => {
 	const { user } = useSelector((state) => state.auth);
@@ -17,7 +18,7 @@ const Receive = () => {
 				</div>
 
 				<div>
-					<div className='w-9/12 mx-auto bg-white rounded-sm  md:w-6/12'>
+					<div className='w-9/12 mx-auto bg-white rounded-sm md:w-6/12'>
 						<img src={qr} alt='qr-code' />
 					</div>
 				</div>
