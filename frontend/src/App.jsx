@@ -30,6 +30,7 @@ import EditDeposit from './components/Admin/Deposit/EditDeposit';
 import Investment from './components/User/Mining/Investment';
 import History from './components/User/Dashboard/History';
 import AllHistory from './components/User/History/AllHistory';
+import ComingSone from './global/ComingSone';
 
 const darkTheme = createTheme({
 	palette: {
@@ -60,7 +61,8 @@ const App = () => {
 
 				{/* User Route */}
 				<Route element={<PrivetRoute />}>
-					<Route path='/dashboard' element={<Wallets />} />
+					<Route path='/dashboard' element={<Dashboard />} />
+					<Route path='/wallets' element={<Wallets />} />
 					{/* <Route path='/wallets' element={<Wallets />} /> */}
 					<Route path='/referral' element={<Referral />} />
 					<Route path='/buy-gem' element={<BuyGem />} />
@@ -73,6 +75,7 @@ const App = () => {
 					<Route path='/buy-history' element={<BuyHistory />} />
 					<Route path='/history' element={<History />} />
 					<Route path='/all-history' element={<AllHistory />} />
+					<Route path='/coming-sone' element={<ComingSone />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>

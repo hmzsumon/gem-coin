@@ -46,7 +46,7 @@ const BuyGem = () => {
 			<div className='text-white '>
 				<div className='w-11/12 px-2 py-4 mx-auto space-y-4 rounded-md bg-slate-800 md:w-9/12'>
 					<div className='text-sm font-bold text-center md:text-2xl'>
-						<h1>Buy GEM Coin</h1>
+						<h1>Buy GMC </h1>
 					</div>
 					{/* Next False */}
 					{!next && (

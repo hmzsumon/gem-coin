@@ -18,7 +18,7 @@ import { FaShareAlt } from 'react-icons/fa';
 import { MdSecurity } from 'react-icons/md';
 import { FcCurrencyExchange, FcSettings } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
-// import { AiTwotoneHome } from 'react-icons/ai';
+import { AiTwotoneHome } from 'react-icons/ai';
 import { GiMining, GiWallet } from 'react-icons/gi';
 import { VscHistory } from 'react-icons/vsc';
 
@@ -26,30 +26,36 @@ export default function SideNave() {
 	const navigate = useNavigate();
 
 	const items = [
-		// {
-		// 	id: 1,
-		// 	name: 'Dashboard',
-		// 	icon: <AiTwotoneHome />,
-		// 	link: () => navigate('/dashboard'),
-		// },
+		{
+			id: 1,
+			name: 'Dashboard',
+			icon: <AiTwotoneHome />,
+			link: () => navigate('/dashboard'),
+		},
 		{
 			id: 11,
-			name: 'Wallet',
+			name: 'GMC Wallet',
 			icon: <GiWallet />,
-			link: () => navigate('/dashboard'),
+			link: () => navigate('/wallets'),
+		},
+		{
+			id: 2,
+			name: 'Refer & Earn',
+			icon: <FaShareAlt />,
+			link: () => navigate('/referral'),
 		},
 		{
 			id: 12,
-			name: 'Transfer',
+			name: 'Buy GMC ',
 			icon: <GiWallet />,
-			link: () => navigate('/dashboard'),
+			link: () => navigate('/buy-gem'),
 		},
-		{
-			id: 13,
-			name: 'Withdraw',
-			icon: <GiWallet />,
-			link: () => navigate('/dashboard'),
-		},
+		// {
+		// 	id: 13,
+		// 	name: 'Withdraw',
+		// 	icon: <GiWallet />,
+		// 	link: () => navigate('/dashboard'),
+		// },
 		{
 			id: 9,
 			name: 'Mining',
@@ -63,12 +69,6 @@ export default function SideNave() {
 			link: () => navigate('/history'),
 		},
 
-		{
-			id: 2,
-			name: 'Referral',
-			icon: <FaShareAlt />,
-			link: () => navigate('/referral'),
-		},
 		// {
 		// 	id: 3,
 		// 	name: 'Profile',
@@ -79,13 +79,13 @@ export default function SideNave() {
 			id: 4,
 			name: 'Security',
 			icon: <MdSecurity />,
-			link: () => navigate('/dashboard'),
+			link: () => navigate('/coming-sone'),
 		},
 		{
 			id: 5,
 			name: 'Settings',
 			icon: <FcSettings />,
-			link: () => navigate('/dashboard'),
+			link: () => navigate('/coming-sone'),
 		},
 		// {
 		// 	id: 7,

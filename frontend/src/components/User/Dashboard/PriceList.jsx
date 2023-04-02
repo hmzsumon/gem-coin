@@ -2,7 +2,7 @@ import React from 'react';
 
 const PriceList = ({ title, chance, lastPrice, bgColor }) => {
 	return (
-		<div className='rounded-md text-white bg-slate-800 '>
+		<div className='text-white rounded-md bg-slate-800 '>
 			<div className='p-3'>
 				<h1 className='italic font-semibold '> Price History</h1>
 				<div>
@@ -18,7 +18,7 @@ const PriceList = ({ title, chance, lastPrice, bgColor }) => {
 									<th>Last Price</th>
 								</tr>
 								<tr className=''>
-									<th>Change</th>
+									<th>Lunching</th>
 								</tr>
 							</div>
 						</thead>
@@ -32,8 +32,8 @@ const PriceList = ({ title, chance, lastPrice, bgColor }) => {
 								<tr>
 									<td className='text-yellow-400 '>{lastPrice}</td>
 								</tr>
-								<tr className={`px-4 w-20 py-1 rounded ${bgColor} `}>
-									<td>{chance}</td>
+								<tr className=''>
+									<td>15 Apr 2023</td>
 								</tr>
 							</div>
 						</tbody>

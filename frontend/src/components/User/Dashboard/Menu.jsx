@@ -6,34 +6,35 @@ import { FaQuestionCircle, FaCoins, FaHandHoldingUsd } from 'react-icons/fa';
 import { FcOnlineSupport } from 'react-icons/fc';
 import { HiAcademicCap } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
-
-const menuItems = [
-	{ id: 1, name: 'Referral', icon: <BsFillGiftFill />, link: '/referral' },
-	{ id: 3, name: 'Buy PXC', icon: <RiCoinsLine />, link: '/buy-pxc' },
-	{ id: 2, name: 'Loan', icon: <FaCoins />, link: '/loan' },
-	{ id: 4, name: 'FAQ', icon: <FaQuestionCircle />, link: '/faq' },
-	{ id: 5, name: 'Live Chat', icon: <FcOnlineSupport />, link: '/support' },
-	{ id: 6, name: 'P2P', icon: <HiAcademicCap />, link: '/p2p' },
-	{
-		id: 7,
-		name: 'Convert',
-		icon: <SiConvertio />,
-		link: '/convert',
-	},
-	{ id: 8, name: 'Lottery', icon: <FaHandHoldingUsd />, link: '/lottery' },
-];
+import { useLoadUserQuery } from '../../../features/auth/authApi';
 
 const Menu = () => {
+	const { data, isLoading } = useLoadUserQuery();
+	const { user } = data || {};
+
+	const menuItems = [
+		{ id: 1, name: 'USDT', link: '/wallets', value: `$${user?.balance}` },
+		{
+			id: 3,
+			name: 'Gemcoin',
+			link: '/wallets',
+			value: Number(user?.gem_coin).toFixed(8),
+		},
+		{ id: 6, name: 'Withdraw', link: '/coming-sone', value: '0.00' },
+		{ id: 2, name: 'Swap', link: '/coming-sone' },
+		{ id: 4, name: 'Send', link: '/send' },
+		{ id: 5, name: 'Receive', link: '/receive' },
+	];
 	return (
-		<div className='rounded-md bg-slate-800 '>
-			<div className='grid grid-cols-4 gap-6 p-2 '>
+		<div className='rounded-md '>
+			<div className='grid grid-cols-3 gap-6 p-2 '>
 				{menuItems.map((item) => (
 					<Link to={item.link} key={item.id}>
-						<li className='flex flex-col items-center py-4 space-y-2 text-gray-100 rounded-md cursor-pointer hover:bg-slate-700'>
-							<span className='text-xl'>{item.icon}</span>
+						<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-amber-700 hover:bg-slate-700'>
 							<span c className='text-sm italic'>
 								{item.name}
 							</span>
+							<span className='text-xs'>{item.value}</span>
 						</li>
 					</Link>
 				))}
