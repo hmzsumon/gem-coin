@@ -27,6 +27,9 @@ import DepositList from './components/Admin/Deposit/DepositList';
 import { ThemeProvider, createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import EditDeposit from './components/Admin/Deposit/EditDeposit';
+import Investment from './components/User/Mining/Investment';
+import History from './components/User/Dashboard/History';
+import AllHistory from './components/User/History/AllHistory';
 
 const darkTheme = createTheme({
 	palette: {
@@ -65,7 +68,11 @@ const App = () => {
 					<Route path='/receive' element={<Receive />} />
 
 					<Route path='/mining' element={<Mining />} />
+					<Route path='/mining/investment' element={<Investment />} />
+
 					<Route path='/buy-history' element={<BuyHistory />} />
+					<Route path='/history' element={<History />} />
+					<Route path='/all-history' element={<AllHistory />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>

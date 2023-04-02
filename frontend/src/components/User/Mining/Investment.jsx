@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import bitImg from '../../assets/mining/bit.png';
 
-import { useStartMiningMutation } from '../../features/mining/miningApi';
+import { useStartMiningMutation } from '../../../features/mining/miningApi';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../Dashboard/Layout/Layout';
 import MiningLayout from './MiningLayout';
-import CircledSpinning from '../../global/CircledSpinning';
+import CircledSpinning from '../../../global/CircledSpinning';
 
 const packages = [
 	{
@@ -47,11 +46,6 @@ const packages = [
 	},
 ];
 
-const wallets = [
-	{ id: 1, name: 'Main Balance PXC', value: 'payunx' },
-	// { id: 2, name: 'Bonus Balance USDT', value: 'usdt' },
-];
-
 const Investment = () => {
 	const navigate = useNavigate();
 	const [startMining, { isError, isLoading, isSuccess, error }] =
@@ -72,9 +66,9 @@ const Investment = () => {
 		myForm.append('package', iPackage?.price);
 		myForm.append('wallet', wallet?.value);
 
-		for (let key of myForm.entries()) {
-			console.log(key[0] + ', ' + key[1]);
-		}
+		// for (let key of myForm.entries()) {
+		// 	console.log(key[0] + ', ' + key[1]);
+		// }
 		startMining(myForm);
 	};
 
@@ -92,8 +86,8 @@ const Investment = () => {
 		<Layout>
 			<MiningLayout>
 				<div className='md:mt-20 md:w-[50%] mx-auto '>
-					<div className=''>
-						<img src={bitImg} alt='BIT' className='w-20 mx-auto mt-4' />
+					<div className='my-4 text-center text-white'>
+						<h2>Buy Pack</h2>
 					</div>
 				</div>
 				<div className='mx-4 my-6 shadow-lg md:w-9/12 md:mx-auto'>
@@ -113,26 +107,11 @@ const Investment = () => {
 								</li>
 							))}
 						</div>
-						<div className='my-6 space-y-4'>
-							<h2>Please Choice a Wallet</h2>
-							<div className='grid grid-cols-1 '>
-								{wallets.map((item) => (
-									<li
-										key={item.id}
-										className={`list-none border border-yellow-400 flex items-center justify-center rounded-md p-2 cursor-pointer hover:bg-yellow-400 hover:text-white ${
-											wallet?.id === item.id ? 'bg-yellow-400 text-white' : ''
-										}`}
-										onClick={() => setWallet(item)}
-									>
-										<span>{item.name} </span>
-									</li>
-								))}
-							</div>
-						</div>
-						<div>
+
+						<div className='flex items-center justify-center my-4 '>
 							<button
 								className='px-4 py-2 ml-auto font-semibold text-blue-700 bg-transparent border border-blue-500 rounded hover:bg-blue-500 hover:text-white hover:border-transparent disabled:cursor-not-allowed'
-								disabled={!iPackage || !wallet}
+								disabled={!iPackage}
 							>
 								{isLoading ? <CircledSpinning /> : 'Start Mining'}
 							</button>

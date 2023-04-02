@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useSendPxcMutation } from '../../../features/pxc.js/pxcApi';
+import { useSendGemMutation } from '../../../features/pxc.js/pxcApi';
 import ButtonLoaderCircle from '../../../global/ButtonLoaderCircle';
 import Layout from '../Dashboard/Layout/Layout';
 import { toast } from 'react-toastify';
@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 const SendGem = () => {
 	const navigate = useNavigate();
-	const [sendPxc, { isLoading, isError, isSuccess, error }] =
-		useSendPxcMutation();
+	const [sendGem, { isLoading, isError, isSuccess, error }] =
+		useSendGemMutation();
 	const { user } = useSelector((state) => state.auth);
 
 	const [recipientId, setRecipientId] = useState('');
@@ -21,7 +21,7 @@ const SendGem = () => {
 		myForm.append('recipientId', recipientId);
 		myForm.append('amount', amount);
 
-		sendPxc(myForm);
+		sendGem(myForm);
 	};
 
 	useEffect(() => {
@@ -29,8 +29,8 @@ const SendGem = () => {
 			toast.error(error?.data?.message);
 		}
 		if (isSuccess) {
-			toast.success('PXC sent successfully');
-			navigate('/wallets');
+			toast.success('Gem sent successfully');
+			navigate('/dashboard');
 		}
 	}, [isSuccess, isError, error, navigate]);
 	return (
@@ -88,7 +88,7 @@ const SendGem = () => {
 						</div>
 						<div className='text-center '>
 							<label className='px-2 py-1 mt-2 text-xs bg-orange-300 rounded-lg'>
-								Fee 0.005%
+								Fee 0.00%
 							</label>
 						</div>
 					</div>

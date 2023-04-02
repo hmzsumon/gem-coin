@@ -1,14 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-const WalletCard01 = () => {
-	const { user } = useSelector((state) => state.auth);
+const WalletCard01 = ({ user }) => {
 	return (
 		<div className='p-4 space-y-4 text-white rounded-md bg-slate-800'>
-			<p className='text-xs font-semibold text-center uppercase '>
-				GemCoin (gmc)
-			</p>
+			<p className='text-xs font-semibold text-center '>Gemcoin (Gem)</p>
 			<div className='flex items-center justify-center space-x-1 text-green-500'>
 				<h1 className='italic '>
 					{user?.gem_coin
@@ -27,7 +23,7 @@ const WalletCard01 = () => {
 					to='/buy-gem'
 					className='w-full px-3 py-2 italic font-bold text-center rounded-sm bg-amber-400 '
 				>
-					Buy GMC
+					Buy Gem
 				</NavLink>
 				<NavLink
 					to='/send'

@@ -8,9 +8,12 @@ import { toast } from 'react-toastify';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useGetMiningQuery } from '../../../features/mining/miningApi';
 
 const MinHeaders = () => {
 	const { user } = useSelector((state) => state.auth);
+	const { data, isLoading, isSuccess, isError, error } = useGetMiningQuery();
+	const { mining } = data || {};
 	// const { mining } = useSelector((state) => state.mining);
 
 	const [copied, setCopied] = useState(false);
@@ -22,10 +25,10 @@ const MinHeaders = () => {
 	}, [copied]);
 
 	return (
-		<div className='px-6 py-4 shadow-md'>
+		<div className='px-6 py-4 text-white shadow-md'>
 			<div className='flex items-center justify-center md:justify-between'>
 				<div className='hidden md:block'>
-					<Link to='/user/dashboard'>
+					<Link to='/dashboard'>
 						<div className='flex items-center space-x-2'>
 							<IoMdArrowRoundBack />
 							<span>Go Back</span>
@@ -34,8 +37,8 @@ const MinHeaders = () => {
 				</div>
 				<div>
 					ID:{' '}
-					{user?.mining_id ? (
-						<span className=''>{user?.mining_id}</span>
+					{mining?.mining_id ? (
+						<span className=''>{mining?.mining_id}</span>
 					) : (
 						<span className='text-red-500'>You have no Mining ID </span>
 					)}

@@ -2,7 +2,7 @@ const Mining = require('../models/miningModel');
 const User = require('../models/userModel');
 var crypto = require('crypto');
 const moment = require('moment');
-const PxcPrice = require('../models/pxc_price');
+const Price = require('./../models/pxcPrice');
 const { sendMe } = require('../utils/sendEmail');
 const MiningTnx = require('../models/miningTnx');
 const cron = require('node-cron');
@@ -14,22 +14,22 @@ const bitcoinTransactionModel = require('../models/bitcoinTransactionModel');
 
 // create a mining
 exports.createMining = catchAsyncErrors(async (req, res, next) => {
-	const pxcPrices = await PxcPrice.find();
-	const priceLength = pxcPrices.length;
-	const lastPrice = pxcPrices[priceLength - 1].price;
+	const prices = await Price.find();
+	const priceLength = prices.length;
+	const lastPrice = prices[priceLength - 1].price;
 	req.body.user = req.user.id;
 	const user = await User.findById(req.user.id);
-	console.log(req.user.id);
-	if (user.balance < 10) {
+	// console.log(req.user.id);
+	if (user.balance < 50) {
 		return next(new ErrorHander('Insufficient balance', 400));
 	}
 
 	let id = crypto.randomBytes(13).toString('hex');
-	const miningId = `B${id}P`;
+	const miningId = `G${id}`;
 	user.mining_id = miningId;
-	user.balance -= 10;
+	user.balance -= 50;
 	const pxc = 10 / lastPrice;
-	user.pxc_balance -= pxc;
+	user.gem_coin -= pxc;
 	createTransaction(user._id, 'cashOut', 10, 'Mining', 'Create Mining ID');
 	await user.save();
 
@@ -108,51 +108,31 @@ exports.startMining = catchAsyncErrors(async (req, res, next) => {
 	if (!user) {
 		return next(new ErrorHander('No user found with that ID', 404));
 	}
-	const pxcPrices = await PxcPrice.find();
-	const priceLength = pxcPrices.length;
-	const lastPrice = pxcPrices[priceLength - 1].price;
+	const prices = await Price.find();
+	const priceLength = prices.length;
+	const lastPrice = prices[priceLength - 1].price;
 
 	// console.log(req.user.id);
 	// console.log(req.body);
 
-	const { package, wallet } = req.body;
+	const { package } = req.body;
 
 	let investMent = Number(package);
-	let userBalance = null;
-
-	if (wallet === 'payunx') {
-		userBalance = user.balance;
-	} else if (wallet === 'usdt') {
-		userBalance = user.bonus_balance;
-	}
-
 	let userPxcBalance = Number(user.pxc_balance);
 
-	if (investMent > userBalance) {
-		return next(new ErrorHander('You do not have enough pax', 404));
+	if (investMent > user.balance) {
+		return next(new ErrorHander('You do not have enough Balance', 404));
 	}
 
 	const mining = await Mining.findOne({ mining_user: req.user.id });
 	if (!mining) {
 		return next(new ErrorHander('No mining found with that ID', 404));
 	}
-	let pxc = investMent / lastPrice;
+	let gem_coin = investMent / lastPrice;
 
-	if (wallet === 'payunx') {
-		if (pxc > userPxcBalance) {
-			return next(new ErrorHander('You do not have enough pax', 404));
-		}
-	}
-
-	if (wallet === 'payunx') {
-		user.balance = userBalance - investMent;
-		user.pxc_balance = userPxcBalance - pxc;
-		user.balance = user.pxc_balance * lastPrice;
-	}
-
-	if (wallet === 'usdt') {
-		user.bonus_balance = userBalance - investMent;
-	}
+	//update user balance
+	user.balance -= investMent;
+	user.gem_coin -= gem_coin;
 	createTransaction(user._id, 'cashOut', investMent, 'Mining', 'Start Mining');
 	await user.save();
 
@@ -390,7 +370,7 @@ cron
 			// find mining
 			const mining = await Mining.findOne({ _id: minings[i]._id });
 			// console.log('Mining profit1', mining.mining_profit);
-			const oneDayProfit = mining.mining_investment * 0.01;
+			const oneDayProfit = mining.mining_investment * 0.005;
 			const oneHourProfit = oneDayProfit / 24;
 			const oneMinuteProfit = oneHourProfit / 60;
 			// console.log('Mining profit1', mining.mining_profit);

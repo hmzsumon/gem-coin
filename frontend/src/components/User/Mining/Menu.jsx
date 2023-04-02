@@ -26,13 +26,13 @@ const miningsMenuItems = [
 		id: 5,
 		name: 'Convert',
 		icon: <SiConvertio />,
-		path: '/convert',
+		path: '/mining',
 	},
 	{
 		id: 6,
 		name: 'Go Back',
 		icon: <MdArrowBack />,
-		path: '/user/dashboard',
+		path: '/dashboard',
 	},
 ];
 

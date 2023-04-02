@@ -3,9 +3,9 @@ import { apiSlice } from '../api/apiSlice';
 export const pxcApi = apiSlice.injectEndpoints({
 	endpoints: (builder) => ({
 		// send pxc
-		sendPxc: builder.mutation({
+		sendGem: builder.mutation({
 			query: (data) => ({
-				url: '/send/pxc',
+				url: '/send/gem',
 				method: 'POST',
 				body: data,
 			}),
@@ -30,5 +30,5 @@ export const pxcApi = apiSlice.injectEndpoints({
 	}),
 });
 
-export const { useSendPxcMutation, useBuyPxcMutation, useGetDepositsQuery } =
+export const { useSendGemMutation, useBuyPxcMutation, useGetDepositsQuery } =
 	pxcApi;

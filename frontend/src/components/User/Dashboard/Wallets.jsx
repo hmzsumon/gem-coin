@@ -12,6 +12,7 @@ import WalletBusd from '../WalletBusd/WalletBusd';
 const Wallets = () => {
 	const { data, isLoading } = useLoadUserQuery();
 	const { user } = data || {};
+
 	return (
 		<Layout>
 			{isLoading ? (
@@ -22,8 +23,8 @@ const Wallets = () => {
 				<div className='h-full pb-20'>
 					<h1 className='my-4 text-xl font-semibold text-gray-100'>Wallet</h1>
 					<div className='space-y-4 '>
-						<WalletCard01 />
-						<WalletUsdt />
+						<WalletCard01 user={user} />
+						<WalletUsdt user={user} />
 						<WalletMusd />
 						<WalletBusd />
 					</div>

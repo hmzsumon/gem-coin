@@ -52,7 +52,7 @@ export default function SideNave() {
 		},
 		{
 			id: 9,
-			name: 'Minning',
+			name: 'Mining',
 			icon: <GiMining />,
 			link: () => navigate('/mining'),
 		},
@@ -60,7 +60,7 @@ export default function SideNave() {
 			id: 10,
 			name: 'History',
 			icon: <VscHistory />,
-			link: () => navigate('/dashboard'),
+			link: () => navigate('/history'),
 		},
 
 		{
