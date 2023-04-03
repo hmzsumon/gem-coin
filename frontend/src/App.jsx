@@ -31,6 +31,7 @@ import Investment from './components/User/Mining/Investment';
 import History from './components/User/Dashboard/History';
 import AllHistory from './components/User/History/AllHistory';
 import ComingSone from './global/ComingSone';
+import ComingPage from './pages/ComingPage';
 
 const darkTheme = createTheme({
 	palette: {
@@ -49,6 +50,7 @@ const App = () => {
 				<Route path='/token' element={<TokennomicsPage />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/signup' element={<Signup />} />
+				<Route path='/coming' element={<ComingPage />} />
 
 				<Route element={<PrivetRoute isAdmin={true} />}>
 					<Route path='/admin/dashboard' element={<AdminDashboard />} />

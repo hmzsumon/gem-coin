@@ -5,36 +5,36 @@ const data = [
 		id: 1,
 		title: 'August 2019 to 2023',
 		description: [
-			'Research & Policy-Making Launching Crypto Coins by forming a new team for People Oriented.  ',
+			'Research & Policy-Making Launching Crypto Coin by forming a new team for People Oriented.  ',
 		],
 	},
 	{
 		id: 2,
 		title: 'March 2023',
 		description: [
-			'Research & Policy-Making Launching Crypto Coins by forming a new team for People Oriented.',
-			'Website, Account opening, presale, mining and other plans are done here.',
+			'GEMCOIN Media Chain formed a team, Generated Coin called GEMCOIN.',
+			'Website, Account Opening presale, Investment, mining and other plans are done here.',
 		],
 	},
 	{
 		id: 3,
 		title: 'April 2023',
 		description: [
-			'GEMCOIN Prices Upgraded, Direct Wallet Connect GEMCOIN Swap Opening & Others Way Swap Ready. Listing CoinMarketCap, CoinGecko & Others Platform.',
+			'GEMCOIN Prices Upgraded, Direct Wallet Connect GEMCOIN Swap Opening & Others Way Swap Ready. Listing CoinMarketCap, CoinGecko, MotherCoinMarket & Others Platform.',
 		],
 	},
 	{
 		id: 4,
 		title: 'May & June 2023 ',
 		description: [
-			'GEMCOIN Wallet Launching. GEMCOIN Marketing. All social site & Google play store. Billboard, Banner, Video Clip etc.',
+			'GEMCOIN Marketing. All social site & Google play store. Billboard, Banner, Video Clip etc.',
 		],
 	},
 	{
 		id: 5,
 		title: 'July 2023',
 		description: [
-			'Support Mother Wallet & Mother Exchange Send Received coin & Mobile app. ',
+			'Support Mother Wallet & Mother Exchange Send Received coin & Mobile App. ',
 		],
 	},
 	{
@@ -48,28 +48,29 @@ const data = [
 		id: 7,
 		title: 'September 2023',
 		description: [
-			'GEMCOIN Face to Face Buy Sell and Withdraw any Currency & Cryptocurrencys Exchange. ',
+			' GEMCOIN Face to Face Buy Sell and Withdraw any Currency & Cryptocurrencys Exchange. ',
 		],
 	},
 	{
 		id: 8,
 		title: 'October 2023',
 		description: [
-			'GEMCOIN All Process Modified. All Business & Investor, GEMCOIN Holder 5 Director Selected & Joining GEMCOIN Head Office in Dubai.  ',
+			'GEMCOIN All Process Modified. All Business & Investor, GEMCOIN Holder 5 Director Selected & Joining GEMCOIN Head Office in Dubai. ',
 		],
 	},
 	{
 		id: 9,
 		title: 'November 2023',
 		description: [
-			'GEMCoin Partner, Merchant Buyer, Sole Agent, Distributor, Marketing, Meeting & Price Distribution in Dubai Invitation.  ',
+			'GEMCoin Partner, Merchant Buyer, Sole Agent, Distributor, Marketing, Meeting & Price Distribution in Dubai Invitation  ',
 		],
 	},
 	{
 		id: 10,
 		title: 'December 2023',
 		description: [
-			'Exchange Listing Mother, Binance, Kucoin, MEXC and World top 10 Exchange. ',
+			'Exchange Listing Mother, Binance, KuCoin, MEXC and World top 10 Exchange. ',
+			'Our Target is 10 lakh users. GemCoin will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
 		],
 	},
 ];

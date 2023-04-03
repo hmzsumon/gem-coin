@@ -11,25 +11,23 @@ const About = () => {
 						<h2 className='text-xl font-semibold  uppercase tracking-[.10rem] '>
 							About Us
 						</h2>
-						<div className='space-y-2 text-slate-400 tracking-[.06rem]'>
-							<p>
-								GMC is the new generation Crypto Coin under the Binance Smart
-								Chain. Vision is to create a community through the whole world
-								to grow the coin rapidly.
-							</p>
-							<p>
-								The token was launched with the idea of offering real-world
-								value. Too many tokens have been launched without the ability to
-								be used for REAL use cases and for real utility, but GEM goes
-								against this trend. GMC can be used to buy and earn unlimited
-								GMC with a great marketing plan. And the services at launch from
-								GEM Network, which has been vetted by the GEM team, and GEM aims
-								to grow this network rapidly. The static rewards system is a
-								concept that was pioneered by GEM finance
+						<div className='text-slate-400 tracking-[.06rem]'>
+							<p className=' mb-4'>
+								GEMCoin is a new Generation crypto coin generated under GEM
+								Media Chain. Our main vision is to build a community through all
+								the media in the world to grow this currency faster.Gem Coin was
+								launched with the idea of providing real-world value. Many coins
+								have been launched without real use cases and the ability to be
+								used for real utility, but GEMCoin goes against this trend.
+								GEMCoin can be used to buy unlimited GEMCoin and earn 100%
+								profit with a great marketing plan. And services at launch from
+								the GEMCoin network, verified by the GEMCoin team, and GEM aims
+								to rapidly grow this network that will change the world. The
+								static reward system is a concept pioneered by GEM Finance
 							</p>
 						</div>
 						<Link to='/signup'>
-							<button className='bg-[#F9A826] text-white px-6 md:px-10 py-3 rounded-sm font-bold tracking-[.09rem] hover:bg-slate-900 hover:shadow-lg hover:text-white transition duration-300 ease-in-out '>
+							<button className='bg-[#F9A826]  text-white px-6 md:px-10 py-3 rounded-sm font-bold tracking-[.09rem] hover:bg-slate-900 hover:shadow-lg hover:text-white transition duration-300 ease-in-out '>
 								GET STARTED
 							</button>
 						</Link>

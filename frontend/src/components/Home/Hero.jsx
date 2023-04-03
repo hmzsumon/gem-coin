@@ -14,12 +14,14 @@ const Hero = () => {
 			<div className='flex items-center justify-center px-2 py-10 md:w-[75%] mx-auto '>
 				<div className='space-y-10 '>
 					<h2 className='text-3xl md:text-5xl tracking-[.10em] font-bold text-center s text-white uppercase '>
-						Investing in Cryptocurrency Seems Too Easy
+						INVESTING IN CRYPTOCURRENCY SEEMS TOO BE VERY EASY AND
+						VERY PROFITABLE.
 					</h2>
 					<p className='text-center tracking-[.09rem] text-white '>
-						By enabling this easy and secure way to invest in GEMCoin and ether
-						we hope to have eliminated the boundaries that earlier prevented
-						individuals and companies.
+						GEM MEDIA CHAIN Created GemCoin Easy and safe way every customer
+						will be able to profit by investing. With a 100% profit guarantee,
+						GemCoin Company hope to establish an unprecedented example and
+						relationship with every customer in the Cryptocurrency Market.
 					</p>
 
 					<div className='flex items-center justify-center gap-4 text-xs md:gap-10 '>

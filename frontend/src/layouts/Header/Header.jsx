@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from 'react';
-import Logo from '../../assets/images/logo.png';
+import Logo from '../../assets/images/logo-blue.png';
 import LogoWhait from '../../assets/images/logo-white.png';
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -28,14 +28,39 @@ const navItems = [
 		path: '/token',
 	},
 	{
-		id: 5,
-		title: 'Whitepaper',
-		path: 'https://gem-coin.gitbook.io/gem-coin',
-	},
-	{
 		id: 6,
 		title: 'Roadmap',
 		path: '/roadmap',
+	},
+	{
+		id: 5,
+		title: 'Whitepaper',
+		path: '/coming',
+	},
+	{
+		id: 7,
+		title: 'Distribution',
+		path: '/coming',
+	},
+	{
+		id: 8,
+		title: 'Wallet',
+		path: '/wallets',
+	},
+	{
+		id: 9,
+		title: 'Exchange',
+		path: '/coming',
+	},
+	{
+		id: 10,
+		title: 'Contact',
+		path: '/coming',
+	},
+	{
+		id: 11,
+		title: 'Team',
+		path: '/coming',
 	},
 ];
 
@@ -57,36 +82,27 @@ const Header = () => {
 				} `}
 			>
 				<div className='flex items-center justify-between '>
-					<div className='flex-1'>
-						<img src={Logo} alt='' className='w-24 md:w-32 ' />
+					<div className='flex-1 flex items-center'>
+						<img src={Logo} alt='' className='w-10 ' />
+						<h2 className=' font-bold tracking-wide text-xl text-gray-700'>
+							GEMCOIN
+						</h2>
 					</div>
 
-					<div className='hidden md:block'>
-						{navItems.map((item) => ({
-							...(item.id === 5 ? (
-								<a
-									href='https://gem-coin.gitbook.io/gem-coin'
-									target='_blank'
-									rel='noreferrer'
-									key={item.id}
-									className='px-4 py-2 text-sm font-semibold  uppercase rounded-md  hover:text-[#f1a619]'
-								>
-									{item.title}
-								</a>
-							) : (
-								<NavLink
-									to={item.path}
-									key={item.id}
-									className={({ isActive }) =>
-										`px-4 py-2 text-sm font-semibold  uppercase rounded-md hover:text-[#f1a619]  ${
-											isActive ? 'text-[#f1a619] ' : 'text-gray-700'
-										}`
-									}
-								>
-									{item.title}
-								</NavLink>
-							)),
-						}))}
+					<div className='hidden text-xs md:block'>
+						{navItems.map((item) => (
+							<NavLink
+								to={item.path}
+								key={item.id}
+								className={({ isActive }) =>
+									`px-2 py-2  font-semibold  uppercase rounded-md hover:text-[#f1a619]  ${
+										isActive ? 'text-[#f1a619] ' : 'text-gray-700'
+									}`
+								}
+							>
+								{item.title}
+							</NavLink>
+						))}
 					</div>
 					{isAuthenticated ? (
 						<div>

@@ -59,8 +59,8 @@ const Features = () => {
 					WHY CHOOSE GEMCoin
 				</h1>
 				<p className='my-2 text-center text-gray-500 '>
-					GEMCoin develop under Binance Smart Chain that a Strong Network in the
-					Crypto World and makes it Easily usable P2P System
+					GEMCoin develop a Strong Network in the Crypto World and makes it
+					Easily usable P2P System
 				</p>
 			</div>
 

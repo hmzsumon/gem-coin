@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/images/logo-white.png';
+import Logo from '../../assets/images/logo-blue.png';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 import { RiSendPlaneFill } from 'react-icons/ri';
 
@@ -71,8 +71,11 @@ const FooterTop = () => {
 		<div className='py-6 my-6 text-gray-300'>
 			<div className='grid justify-between md:grid-cols-3 gap-14'>
 				<div className='space-y-4 '>
-					<div>
-						<img src={Logo} alt='' className='w-32' />
+					<div className='flex-1 flex items-center'>
+						<img src={Logo} alt='' className='w-10 ' />
+						<h2 className=' font-bold tracking-wide text-white text-xl '>
+							GEMCOIN
+						</h2>
 					</div>
 					<div>
 						<p className='text-gray-300 '>

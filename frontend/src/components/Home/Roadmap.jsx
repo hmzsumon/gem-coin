@@ -3,8 +3,9 @@ import React from 'react';
 const mapData = [
 	{
 		id: 1,
-		title: 'March 2023',
-		description: 'GEMCoin   Distribution & Market.',
+		title: 'August 2019 to 2023',
+		description:
+			'Research & Policy-Making Launching Crypto Coin by forming a new team for People Oriented.',
 	},
 	{
 		id: 2,
