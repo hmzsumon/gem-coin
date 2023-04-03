@@ -115,7 +115,6 @@ const FooterTop = () => {
 				<div className='px-4 '>
 					<h2 className='text-[#F1A619]'>CONTACT</h2>
 					<p>
-						Genuine Electronic Money Coin <br />
 						<span className='text-gray-500 '>Address: </span> GEMCoin Building
 						No-2, Dubai Digital Park, Dubai, UAE <br />
 						<span className='text-gray-500 '>Phone: </span> +971 56 179 1590{' '}

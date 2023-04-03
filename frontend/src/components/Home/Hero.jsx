@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Image1 from '../../assets/images/hero/Logo_CoinGecko300.png';
 import Image2 from '../../assets/images/hero/Logo_Coinmarketcap200.png';
 import Image3 from '../../assets/images/hero/Logo_GEMRoadmap300.png';
 import Image4 from '../../assets/images/hero/Logo_GEMWhitepaper300.png';
-import Image5 from '../../assets/images/hero/Logo_MotherCryptoMarket300.png';
+import Image5 from '../../assets/images/hero/mother.jpg';
 
 const images = [Image1, Image2, Image3, Image4, Image5];
 
@@ -22,9 +23,11 @@ const Hero = () => {
 					</p>
 
 					<div className='flex items-center justify-center gap-4 text-xs md:gap-10 '>
-						<button className='bg-[#F9A826] text-white px-6 md:px-10 py-3 rounded-sm font-bold tracking-[.09rem] hover:bg-slate-900 hover:shadow-lg hover:text-white transition duration-300 ease-in-out '>
-							GET STARTED
-						</button>
+						<Link to='/signup'>
+							<button className='bg-[#F9A826] text-white px-6 md:px-10 py-3 rounded-sm font-bold tracking-[.09rem] hover:bg-slate-900 hover:shadow-lg hover:text-white transition duration-300 ease-in-out '>
+								GET STARTED
+							</button>
+						</Link>
 						<button className='bg-white text-slate-900 px-6 md:px-10 py-3 rounded-sm font-bold tracking-[.09rem] hover:bg-[#F9A826] hover:shadow-lg hover:text-white transition duration-300 ease-in-out '>
 							CONTACT US
 						</button>
@@ -32,9 +35,9 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<div className='grid gap-6 px-5 py-10 md:grid-cols-5'>
+			<div className='grid gap-2 md:gap-3 px-5 py-5 items-center grid-cols-3 md:grid-cols-5'>
 				{images.map((img, index) => (
-					<img key={index} src={img} alt='img' className='w-full' />
+					<img key={index} src={img} alt='img' className='md:w-[60%] mx-auto' />
 				))}
 			</div>
 		</div>

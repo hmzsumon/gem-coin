@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Logo from '../../assets/images/logo.png';
 import LogoWhait from '../../assets/images/logo-white.png';
 import { Link, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const navItems = [
 	{
@@ -39,6 +40,7 @@ const navItems = [
 ];
 
 const Header = () => {
+	const { isAuthenticated } = useSelector((state) => state.auth);
 	/* for sticky header */
 	const [headerFix, setheaderFix] = useState(false);
 	useEffect(() => {
@@ -86,19 +88,30 @@ const Header = () => {
 							)),
 						}))}
 					</div>
-					<div className='mr-10 space-x-4 md:mr-0 '>
-						<Link to='/login'>
-							<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
-								Login
-							</button>
-						</Link>
+					{isAuthenticated ? (
+						<div>
+							<Link to='/dashboard'>
+								<button className='px-4 py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
+									Dashboard
+								</button>
+							</Link>
+						</div>
+					) : (
+						<div className='mr-10 space-x-4 md:mr-0 '>
+							<Link to='/login'>
+								<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
+									Login
+								</button>
+							</Link>
 
-						<Link to='/signup'>
-							<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
-								Sign Up
-							</button>
-						</Link>
-					</div>
+							<Link to='/signup'>
+								<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
+									Sign Up
+								</button>
+							</Link>
+						</div>
+					)}
+
 					<div className='md:hidden'>
 						<button
 							type='button'

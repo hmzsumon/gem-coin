@@ -4,8 +4,7 @@ const mapData = [
 	{
 		id: 1,
 		title: 'March 2023',
-		description:
-			'GEMCoin Binance Smart Chain Base Token launch, Distribution & Market.',
+		description: 'GEMCoin   Distribution & Market.',
 	},
 	{
 		id: 2,
@@ -80,7 +79,7 @@ const Roadmap = () => {
 					<div key={item.id}>
 						<div className='my-4 '>
 							<div className='flex items-center justify-center my-4 '>
-								<div className='flex items-center justify-center w-10 h-10 rounded-full bg-slate-200'>
+								<div className='flex items-center justify-center w-20 h-20 rounded-full border'>
 									<span className='text-2xl font-semibold text-slate-500'>
 										{item.id}
 									</span>

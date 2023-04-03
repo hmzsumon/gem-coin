@@ -1,7 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import { SiConvertio } from 'react-icons/si';
 
 const Everything = () => {
+	const [coin, setCoin] = useState(1);
+	const [usdt, setUsdt] = useState(0.25);
+
+	const handleChange = (e) => {
+		setCoin(e.target.value);
+		setUsdt(e.target.value * 0.25);
+	};
+
 	return (
 		<div className='bg-[#4B4C55] text-white'>
 			<div className='px-4 py-16 md:mx-10 '>
@@ -67,7 +76,8 @@ const Everything = () => {
 								<input
 									type='text'
 									id='default-input'
-									value={1}
+									value={coin}
+									onChange={handleChange}
 									className='block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-md dark:placeholder-gray-400'
 								/>
 								<select
@@ -81,7 +91,7 @@ const Everything = () => {
 								<input
 									type='text'
 									id='default-input'
-									value={0.25}
+									value={usdt}
 									className='block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-md dark:placeholder-gray-400'
 								/>
 								<select

@@ -46,7 +46,7 @@ const items = [
 	{
 		id: 6,
 		title: 'RECURRING BUYING',
-		description: 'Set-up how you want to purchase the cryptocurrency you like.',
+		description: 'Set-up how you want to purchase  cryptocurrency you like.',
 		icon: RecurringIcon,
 	},
 ];
