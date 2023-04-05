@@ -6,6 +6,7 @@ import App from './App';
 import './index.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import CryptoContext from './CryptoContext';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
@@ -14,7 +15,9 @@ root.render(
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
 				<Router>
-					<App />
+					<CryptoContext>
+						<App />
+					</CryptoContext>
 				</Router>
 			</PersistGate>
 		</Provider>

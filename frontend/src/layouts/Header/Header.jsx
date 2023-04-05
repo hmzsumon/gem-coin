@@ -24,7 +24,7 @@ const navItems = [
 	},
 	{
 		id: 4,
-		title: 'Token',
+		title: 'Distribution',
 		path: '/token',
 	},
 	{
@@ -37,11 +37,11 @@ const navItems = [
 		title: 'Whitepaper',
 		path: '/coming',
 	},
-	{
-		id: 7,
-		title: 'Distribution',
-		path: '/coming',
-	},
+	// {
+	// 	id: 7,
+	// 	title: 'Distribution',
+	// 	path: '/coming',
+	// },
 	{
 		id: 8,
 		title: 'Wallet',

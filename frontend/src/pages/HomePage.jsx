@@ -8,6 +8,7 @@ import Tokennomics from '../components/Home/Tokennomics';
 import Everything from '../components/Home/Everything';
 import Token from '../components/Home/Token';
 import Roadmap2 from '../components/Home/Roadmap2';
+import CoinsTable from '../components/Home/CoinsTable';
 const HomePage = () => {
 	return (
 		<TemplateLayout>
@@ -16,7 +17,7 @@ const HomePage = () => {
 				<About />
 				<Features />
 				<Roadmap2 />
-				<Prices />
+				<CoinsTable />
 				<Token />
 				<Everything />
 			</div>
