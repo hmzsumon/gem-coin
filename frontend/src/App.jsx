@@ -24,20 +24,16 @@ import PriceList from './components/Admin/Price/PriceList';
 import CreatePrice from './components/Admin/Price/CreatePrice';
 import BuyHistory from './components/User/Wallet01/BuyHistory';
 import DepositList from './components/Admin/Deposit/DepositList';
-import { ThemeProvider, createTheme } from '@mui/material';
-import CssBaseline from '@mui/material/CssBaseline';
+
 import EditDeposit from './components/Admin/Deposit/EditDeposit';
 import Investment from './components/User/Mining/Investment';
 import History from './components/User/Dashboard/History';
 import AllHistory from './components/User/History/AllHistory';
 import ComingSone from './global/ComingSone';
 import ComingPage from './pages/ComingPage';
-
-const darkTheme = createTheme({
-	palette: {
-		mode: 'dark',
-	},
-});
+import EmailVerification from './components/User/Verification/EmailVerification';
+import ForgotPassword from './components/User/ResetPass/ForgotPassword';
+import PasswordReset from './components/User/ResetPass/PasswordReset';
 
 const App = () => {
 	return (
@@ -51,6 +47,10 @@ const App = () => {
 				<Route path='/login' element={<Login />} />
 				<Route path='/signup' element={<Signup />} />
 				<Route path='/coming' element={<ComingPage />} />
+
+				<Route path='/email-verify' element={<EmailVerification />} />
+				<Route path='/forgot-password' element={<ForgotPassword />} />
+				<Route path='/password/reset/:token' element={<PasswordReset />} />
 
 				<Route element={<PrivetRoute isAdmin={true} />}>
 					<Route path='/admin/dashboard' element={<AdminDashboard />} />

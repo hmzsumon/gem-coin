@@ -500,12 +500,12 @@ const Signup = () => {
 	useEffect(() => {
 		if (isSuccess) {
 			toast.success('Registration Successful');
-			navigate('/dashboard');
+			navigate(`/email-verify?email=${email}`);
 		}
 		if (isError) {
 			toast.error(error.data.message);
 		}
-	}, [isSuccess, isError, error, navigate]);
+	}, [isSuccess, isError, error, navigate, email]);
 	return (
 		<TemplateLayout>
 			<div className='px-4 py-16 md:p-10 bg-slate-800'>

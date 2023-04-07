@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const {
 	seedUser,
 	registerUser,
@@ -17,8 +18,6 @@ const {
 	getUserByPxcId,
 	sendVerificationEmail,
 	findUserByPhoneNumber,
-	verifyUserEmail,
-	verifyAllEmil,
 	updateUserBalanceByPxcPrice,
 	registerMerchant,
 	getAllUsersBalance,
@@ -27,21 +26,24 @@ const {
 	isCompletedPxcMining,
 	updatePxcMining,
 	updateAllUsersBalance2,
+	verifyEmail,
+	resendEmailVerificationCode,
 } = require('../controllers/userController');
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 const User = require('../models/userModel');
 
 const router = express.Router();
+const upload = multer({});
 
 router.route('/seed').get(seedUser);
 
-router.route('/register').post(registerUser);
+router.route('/register').post(upload.none(), registerUser);
 
-router.route('/login').post(loginUser);
+router.route('/login').post(upload.none(), loginUser);
 
-router.route('/password/forgot').post(forgotPassword);
+router.route('/forgot-password').post(upload.none(), forgotPassword);
 
-router.route('/password/reset/:token').put(resetPassword);
+router.route('/password/reset').post(upload.none(), resetPassword);
 
 router.route('/logout').put(logout);
 
@@ -73,11 +75,13 @@ router.route('/verify-email').post(isAuthenticatedUser, sendVerificationEmail);
 // find user by phone number
 router.route('/find-user').get(findUserByPhoneNumber);
 
-// validate user email
-// router.route('/verify/:id/:token').put(verifyUserEmail);
+// verify email
+router.route('/verify-email/with-code').post(upload.none(), verifyEmail);
 
-// all email verification
-// router.route('/verify-all-email').put(verifyAllEmil);
+// resend email verification code
+router
+	.route('/resend-email-verification-code')
+	.post(resendEmailVerificationCode);
 
 // update user balance
 router

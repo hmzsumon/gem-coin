@@ -100,8 +100,8 @@ export const authApi = apiSlice.injectEndpoints({
 
 		// resend email verification
 		resendEmailVerification: builder.mutation({
-			query: (phone) => ({
-				url: `/resend-email-verification-code?phone=${phone}`,
+			query: (email) => ({
+				url: `/resend-email-verification-code?email=${email}`,
 				method: 'POST',
 			}),
 		}),

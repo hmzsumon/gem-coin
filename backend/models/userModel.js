@@ -113,6 +113,9 @@ const userSchema = new mongoose.Schema(
 			type: Boolean,
 			default: false,
 		},
+		verify_code: {
+			type: String,
+		},
 		active_status: {
 			type: Boolean,
 			default: true,

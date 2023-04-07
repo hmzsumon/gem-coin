@@ -99,6 +99,9 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		return next(new ErrorHander('Phone number already exists', 400));
 	}
 
+	// 6 digit verification code
+	const verify_code = Math.floor(100000 + Math.random() * 900000);
+
 	const newUser = await User.create({
 		name,
 		username,
@@ -112,6 +115,14 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		bonus_balance: 25,
 		balance: 25,
 		gem_coin: 100,
+		verify_code,
+	});
+
+	// send verification email
+	sendEmail({
+		email: email,
+		subject: 'GEMCOIN Verification Code',
+		message: `Your verification code is ${verify_code}`,
 	});
 
 	sendToken(newUser, 201, res);
@@ -249,7 +260,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 	// creating token hash
 	const resetPasswordToken = crypto
 		.createHash('sha256')
-		.update(req.params.token)
+		.update(req.body.token)
 		.digest('hex');
 
 	const user = await User.findOne({
@@ -647,3 +658,57 @@ exports.updateAllUsersBalance2 = catchAsyncErrors(async (req, res, next) => {
 		message: 'All users balance updated successfully',
 	});
 });
+
+// verify email address with code
+exports.verifyEmail = catchAsyncErrors(async (req, res, next) => {
+	const { code, email } = req.body;
+	const user = await User.findOne({ email });
+	if (!user) {
+		return next(new ErrorHander('User not found', 404));
+	}
+	if (user.email_verified === true) {
+		return next(new ErrorHander('Email already verified', 400));
+	}
+	if (user.verify_code !== code) {
+		return next(new ErrorHander('Invalid code', 400));
+	}
+
+	user.email_verified = true;
+	user.verify_code = null;
+	user.is_newUser = false;
+	await user.save();
+
+	res.status(200).json({
+		success: true,
+		message: 'Email verified successfully',
+		user,
+	});
+});
+
+// resend email verification code
+exports.resendEmailVerificationCode = catchAsyncErrors(
+	async (req, res, next) => {
+		const { email } = req.query;
+		console.log('email', req.query);
+		const user = await User.findOne({ email });
+		if (!user) {
+			return next(new ErrorHander('User not found', 404));
+		}
+
+		const code = Math.floor(100000 + Math.random() * 900000);
+		user.verify_code = code;
+		await user.save();
+
+		const message = `Your verification code is ${code}`;
+		sendEmail({
+			email: user.email,
+			subject: 'Email Verification Code',
+			message,
+		});
+
+		res.status(200).json({
+			success: true,
+			message: 'Email verification code sent successfully',
+		});
+	}
+);

@@ -65,7 +65,7 @@ const navItems = [
 ];
 
 const Header = () => {
-	const { isAuthenticated } = useSelector((state) => state.auth);
+	const { isAuthenticated, user } = useSelector((state) => state.auth);
 	/* for sticky header */
 	const [headerFix, setheaderFix] = useState(false);
 	useEffect(() => {
@@ -82,9 +82,9 @@ const Header = () => {
 				} `}
 			>
 				<div className='flex items-center justify-between '>
-					<div className='flex-1 flex items-center'>
+					<div className='flex items-center flex-1'>
 						<img src={Logo} alt='' className='w-10 ' />
-						<h2 className=' font-bold tracking-wide text-xl text-gray-700'>
+						<h2 className='text-xl font-bold tracking-wide text-gray-700 '>
 							GEMCOIN
 						</h2>
 					</div>
@@ -104,7 +104,7 @@ const Header = () => {
 							</NavLink>
 						))}
 					</div>
-					{isAuthenticated ? (
+					{isAuthenticated && user?.email_verified ? (
 						<div>
 							<Link to='/dashboard'>
 								<button className='px-4 py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
