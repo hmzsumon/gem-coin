@@ -12,18 +12,21 @@ const About = () => {
 							About Us
 						</h2>
 						<div className='text-slate-400 tracking-[.06rem]'>
-							<p className=' mb-4'>
-								GEMCoin is a new Generation crypto coin generated under GEM
-								Media Chain. Our main vision is to build a community through all
-								the media in the world to grow this currency faster.Gem Coin was
-								launched with the idea of providing real-world value. Many coins
-								have been launched without real use cases and the ability to be
-								used for real utility, but GEMCoin goes against this trend.
-								GEMCoin can be used to buy unlimited GEMCoin and earn 100%
-								profit with a great marketing plan. And services at launch from
-								the GEMCoin network, verified by the GEMCoin team, and GEM aims
-								to rapidly grow this network that will change the world. The
-								static reward system is a concept pioneered by GEM Finance
+							<p className='mb-4 '>
+								GEMCoin (GMC) is a new Generation crypto coin generated under
+								GEM Media Chain. Our main vision is to build a community through
+								all the media in the world to grow this currency faster.
+							</p>
+							<p className='mb-4 '>
+								GEMCoin (GMC) was launched with the idea of providing real-world
+								value. Many coins have been launched without real use cases and
+								the ability to be used for real utility, but GEMCoin goes
+								against this trend. GEMCoin can be used to buy unlimited GEMCoin
+								and earn 100% profit with a great marketing plan. And services
+								at launch from the GEMCoin network, verified by the GEMCoin
+								team, and GMC aims to rapidly grow this network that will change
+								the world. The static reward system is a concept pioneered by
+								GEM MEDIA Finance.
 							</p>
 						</div>
 						<Link to='/signup'>
