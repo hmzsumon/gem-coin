@@ -5,9 +5,9 @@ import PieChart from './PieChart';
 const Token = () => {
 	return (
 		<div className=' bg-slate-800'>
-			<div className='mx-4 py-10 my-16 md:mx-10'>
+			<div className='py-10 mx-4 my-16 md:mx-10'>
 				<div className='space-y-3 '>
-					<h1 className='text-3xl text-white tracking-wide text-center uppercase '>
+					<h1 className='text-3xl tracking-wide text-center text-white uppercase '>
 						Distribution
 					</h1>
 					<p className='text-sm tracking-wide text-center text-gray-500'>
@@ -15,29 +15,35 @@ const Token = () => {
 					</p>
 				</div>
 
-				<div className=' space-y-6 text-white my-10 '>
-					<div className=' grid  gap-6 md:grid-cols-3'>
-						<div className=' md:col-span-1 space-y-4 order-2 md:-order-1'>
-							<li className=' p-2 rounded border list-none'>
-								<p>Firm Capital 65%</p>
+				<div className='my-10 space-y-6 text-white '>
+					<div className='grid gap-6 md:grid-cols-3'>
+						<div className='order-2 space-y-4 md:col-span-1 md:-order-1'>
+							<li className='p-2 list-none border rounded '>
+								<p>Mining & Airdrop 5%</p>
 							</li>
-							<li className=' p-2 rounded border list-none'>
-								<p>ICO Marketing 5%</p>
+							<li className='p-2 list-none border rounded '>
+								<p>Private Sale & Pre-Sale 20%</p>
 							</li>
-							<li className=' p-2 rounded border list-none'>
-								<p>Exchange Listing 7%</p>
+							<li className='p-2 list-none border rounded '>
+								<p>Farm, Staking, Pools 25%</p>
 							</li>
-							<li className=' p-2 rounded border list-none'>
-								<p>Team 4%</p>
+							<li className='p-2 list-none border rounded '>
+								<p>GEM Burn 15%</p>
 							</li>
-							<li className=' p-2 rounded border list-none'>
-								<p>Bounty & Events 9%</p>
+							<li className='p-2 list-none border rounded '>
+								<p>Development 2%</p>
 							</li>
-							<li className=' p-2 rounded border list-none'>
-								<p>Advisors & Partners 10%</p>
+							<li className='p-2 list-none border rounded '>
+								<p>Free Gaming 10%</p>
+							</li>
+							<li className='p-2 list-none border rounded '>
+								<p>Exchange Listing 20%</p>
+							</li>
+							<li className='p-2 list-none border rounded '>
+								<p>Worldwide Donation 3%</p>
 							</li>
 						</div>
-						<div className=' md:col-span-2 flex items-center justify-center '>
+						<div className='flex items-center justify-center md:col-span-2'>
 							<PieChart />
 						</div>
 					</div>
@@ -49,7 +55,7 @@ const Token = () => {
 									<p className='text-xs tracking-widest uppercase text-violet-600'>
 										Token Name
 									</p>
-									<p className='text-xs text-gray-500'>GEMCOIN</p>
+									<p className='text-xs text-gray-500'>30000000000 GEMCOIN</p>
 								</div>
 							</li>
 						</div>
@@ -71,7 +77,9 @@ const Token = () => {
 									<p className='text-xs tracking-widest uppercase text-violet-600'>
 										Total Supply
 									</p>
-									<p className='text-xs text-gray-500'>30000000000</p>
+									<p className='text-xs text-gray-500'>
+										30000000000 GMC (3 Billion)
+									</p>
 								</div>
 							</li>
 						</div>

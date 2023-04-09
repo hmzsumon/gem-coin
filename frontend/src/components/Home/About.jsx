@@ -11,7 +11,7 @@ const About = () => {
 						<h2 className='text-xl font-semibold  uppercase tracking-[.10rem] '>
 							About Us
 						</h2>
-						<div className='text-slate-400 tracking-[.06rem]'>
+						<div className='text-slate-400 text-justify tracking-[.06rem]'>
 							<p className='mb-4 '>
 								GEMCoin (GMC) is a new Generation crypto coin generated under
 								GEM Media Chain. Our main vision is to build a community through

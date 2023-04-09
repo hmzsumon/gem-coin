@@ -3,14 +3,16 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-let data = [65, 5, 7, 4, 9, 10];
+let data = [5, 20, 25, 15, 2, 10, 20, 3];
 let labels = [
-	'Firm Capital',
-	'ICO Marketing',
-	'Exchange Listing',
-	'Team',
-	'Bounty & Events',
-	'Advisors & Partners',
+	'Mining & Airdrop ',
+	'Private Sale & Pre-Sale ',
+	'Farm, Staking, Pools ',
+	'GEM Burn',
+	'Development',
+	'Free Gaming',
+	'Exchange Listing ',
+	'Worldwide Donation ',
 ];
 let customLabels = labels.map((label, index) => `${label}: ${data[index]} %`);
 
@@ -26,6 +28,8 @@ const chartdata = {
 				'#E22C3A',
 				'#F99C25',
 				'#87bc3a',
+				'#F16130',
+				'#1BA98D',
 			],
 			borderColor: ['black'],
 			borderWidth: 1,
