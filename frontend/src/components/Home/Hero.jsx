@@ -6,7 +6,38 @@ import Image3 from '../../assets/images/hero/Logo_GEMRoadmap300.png';
 import Image4 from '../../assets/images/hero/Logo_GEMWhitepaper300.png';
 import Image5 from '../../assets/images/hero/mother.jpg';
 
-const images = [Image1, Image2, Image3, Image4, Image5];
+const images = [
+	{
+		id: 1,
+		src: Image1,
+		alt: 'Image1',
+		link: 'https://www.coingecko.com/',
+	},
+	{
+		id: 2,
+		src: Image2,
+		alt: 'Image2',
+		link: 'https://coinmarketcap.com/',
+	},
+	{
+		id: 3,
+		src: Image3,
+		alt: 'Image3',
+		link: 'https://www.gemcoin.global/roadmap',
+	},
+	{
+		id: 4,
+		src: Image4,
+		alt: 'Image4',
+		link: 'https://www.gemcoin.global/coming',
+	},
+	{
+		id: 5,
+		src: Image5,
+		alt: 'Image5',
+		link: 'https://www.gemcoin.global/coming',
+	},
+];
 
 const Hero = () => {
 	return (
@@ -37,9 +68,17 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<div className='grid gap-2 md:gap-3 px-5 py-5 items-center grid-cols-3 md:grid-cols-5'>
+			<div className='grid items-center grid-cols-3 gap-2 px-5 py-5 md:gap-3 md:grid-cols-5'>
 				{images.map((img, index) => (
-					<img key={index} src={img} alt='img' className='md:w-[60%] mx-auto' />
+					<a
+						key={index}
+						href={img.link}
+						target='_blank'
+						rel='noreferrer'
+						className='flex items-center justify-center cursor-pointer'
+					>
+						<img src={img.src} alt={img.alt} className='w-24' />
+					</a>
 				))}
 			</div>
 		</div>

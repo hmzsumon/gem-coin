@@ -17,7 +17,7 @@ const About = () => {
 								GEM Media Chain. Our main vision is to build a community through
 								all the media in the world to grow this currency faster.
 							</p>
-							<p className='mb-4 '>
+							<p className='mb-10 '>
 								GEMCoin (GMC) was launched with the idea of providing real-world
 								value. Many coins have been launched without real use cases and
 								the ability to be used for real utility, but GEMCoin goes

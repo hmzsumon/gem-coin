@@ -1,6 +1,6 @@
 import React from 'react';
 import SideNave from '../SideNave';
-import logo from '../../../../assets/images/logo-white.png';
+import logo from '../../../../assets/images/logo-blue.png';
 import { BsBellFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
@@ -12,8 +12,11 @@ const Topbar = () => {
 					<SideNave />
 					<div className='flex items-center'>
 						<Link to='/'>
-							<img src={logo} alt='logo' className='w-14' />
+							<img src={logo} alt='logo' className='w-8' />
 						</Link>
+						<h1 className='ml-2 text-sm font-bold text-gray-100 uppercase md:text-xl'>
+							Gmc
+						</h1>
 					</div>
 				</div>
 				<div>
