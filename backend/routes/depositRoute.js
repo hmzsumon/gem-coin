@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const upload = multer({});
 const router = express.Router();
 const {
 	createDeposit,
@@ -17,10 +19,15 @@ router.get(
 	authorizeRoles('admin'),
 	getAllDeposits
 );
-router.post('/deposit', isAuthenticatedUser, createDeposit);
+router.post('/deposit', upload.none(), isAuthenticatedUser, createDeposit);
 router.get('/deposits/me', isAuthenticatedUser, getUserDeposits);
 // confirm deposit
-router.put('/deposit/confirm/:id', isAuthenticatedUser, confirmDeposit);
+router.put(
+	'/deposit/confirm/:id',
+	upload.none(),
+	isAuthenticatedUser,
+	confirmDeposit
+);
 
 // delete all pending deposits
 router.delete('/deposit/delete/pending', deleteAllPendingDeposits);
@@ -31,6 +38,7 @@ router.get('/deposit/:id', isAuthenticatedUser, getSingleDeposit);
 // approve a single deposit
 router.put(
 	'/deposit/approve/:id',
+	upload.none(),
 	isAuthenticatedUser,
 	authorizeRoles('admin'),
 	approveDeposit

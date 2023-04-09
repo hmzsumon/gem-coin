@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
+const multer = require('multer');
+const upload = multer({});
 const {
 	createMining,
 	getLoggedInUserMining,
@@ -17,7 +18,7 @@ const {
 const { isAuthenticatedUser } = require('../middleware/auth');
 
 // create a mining
-router.post('/mining', isAuthenticatedUser, createMining);
+router.post('/mining', upload.none(), isAuthenticatedUser, createMining);
 
 // get a mining
 router.get('/mining/me', isAuthenticatedUser, getLoggedInUserMining);
@@ -26,10 +27,15 @@ router.get('/mining/me', isAuthenticatedUser, getLoggedInUserMining);
 router.get('/mining/:id', isAuthenticatedUser, getSpecificMining);
 
 // activate the mining
-router.put('/mining/activate/:id', isAuthenticatedUser, activeMining);
+router.put(
+	'/mining/activate/:id',
+	upload.none(),
+	isAuthenticatedUser,
+	activeMining
+);
 
 // start mining
-router.post('/mining/start', isAuthenticatedUser, startMining);
+router.post('/mining/start', upload.none(), isAuthenticatedUser, startMining);
 
 // update profit
 router.put('/mining/update-profit', isAuthenticatedUser, updateMining);

@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const upload = multer({});
 const {
 	getUsdxDetails,
 	createUsdxForUsers,
@@ -12,9 +14,9 @@ const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 router.route('/usdx').get(isAuthenticatedUser, getUsdxDetails);
 
 // create all usdx details
-router.route('/create/usdx').post(createUsdxForUsers);
+router.route('/create/usdx').post(upload.none(), createUsdxForUsers);
 
 // send usdx to another usdx
-router.route('/send/usdx').post(isAuthenticatedUser, sendUsdx);
+router.route('/send/usdx').post(upload.none(), isAuthenticatedUser, sendUsdx);
 
 module.exports = router;
