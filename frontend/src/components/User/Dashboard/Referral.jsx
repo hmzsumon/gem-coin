@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CopyToClipboardButton from '../../../global/CopyToClipboardButton';
+
 import Layout from './Layout/Layout';
+import CopyBtn from '../../../global/CopyBtn';
 
 const Referral = () => {
 	const { user } = useSelector((state) => state.auth);
@@ -11,14 +12,14 @@ const Referral = () => {
 	return (
 		<Layout>
 			<div className='h-screen'>
-				<div className='grid text-white w-11/12 grid-cols-1 gap-6 px-2 py-10 mx-auto rounded-md md:grid-cols-2 md:9/12 bg-slate-800'>
+				<div className='grid w-11/12 grid-cols-1 gap-6 px-2 py-10 mx-auto text-white rounded-md md:grid-cols-2 md:9/12 bg-slate-800'>
 					<div>
 						<h className='text-xs italic font-semibold text-center md:text-sm'>
 							<span>{link}</span>
 						</h>
 					</div>
 					<div className='w-full'>
-						<CopyToClipboardButton text={link} btnText='Copy' />
+						<CopyBtn textData={link} btnText='Copy' />
 					</div>
 				</div>
 			</div>

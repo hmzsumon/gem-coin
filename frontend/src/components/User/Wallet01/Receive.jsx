@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Layout from '../Dashboard/Layout/Layout';
 import qr from '../../../assets/qr/qrcode1.png';
 
-import CopyToClipboardButton from '../../../global/CopyToClipboardButton';
+import CopyBtn from '../../../global/CopyBtn';
 
 const Receive = () => {
 	const { user } = useSelector((state) => state.auth);
@@ -29,7 +29,7 @@ const Receive = () => {
 							{user?.customer_id}
 						</span>
 					</h3>
-					<CopyToClipboardButton text={user?.customer_id} btnText='Copy' />
+					<CopyBtn textData={user?.customer_id} btnText='Copy' />
 				</div>
 			</div>
 		</Layout>

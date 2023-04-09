@@ -6,7 +6,10 @@ const CopyToClipboardButton = ({ text, btnText }) => {
 	const [open, setOpen] = useState(false);
 	const handleClick = () => {
 		setOpen(true);
-		navigator.clipboard.writeText(text);
+		navigator.clipboard
+			.writeText(text)
+			.then(() => console.log('Text copied to clipboard'))
+			.catch((err) => console.log('Something went wrong', err));
 	};
 	return (
 		<>

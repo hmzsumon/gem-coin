@@ -77,14 +77,14 @@ const Header = () => {
 	return (
 		<div>
 			<header
-				className={`px-6 py-2 shadow-lg ${
+				className={`px-4 py-2 shadow-lg ${
 					headerFix ? 'sticky-bar  w-full' : 'bg-slate-100'
 				} `}
 			>
 				<div className='flex items-center justify-between '>
 					<div className='flex items-center flex-1'>
-						<img src={Logo} alt='' className='w-10 ' />
-						<h2 className='text-xl font-bold tracking-wide text-gray-700 '>
+						<img src={Logo} alt='' className='w-8 md:w-10 ' />
+						<h2 className='text-sm font-bold tracking-wide text-gray-700 md:text-xl '>
 							GEMCOIN
 						</h2>
 					</div>
@@ -107,7 +107,7 @@ const Header = () => {
 					{isAuthenticated && user?.email_verified ? (
 						<div>
 							<Link to='/dashboard'>
-								<button className='px-4 py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
+								<button className='px-4 py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] text-[#f1a619] md:text-white'>
 									Dashboard
 								</button>
 							</Link>
@@ -115,20 +115,20 @@ const Header = () => {
 					) : (
 						<div className='mr-10 space-x-4 md:mr-0 '>
 							<Link to='/login'>
-								<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
+								<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] text-[#f1a619] md:text-white'>
 									Login
 								</button>
 							</Link>
 
 							<Link to='/signup'>
-								<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] md:text-white'>
+								<button className='md:px-4 md:py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] text-[#f1a619] md:text-white'>
 									Sign Up
 								</button>
 							</Link>
 						</div>
 					)}
 
-					<div className='md:hidden'>
+					<div className=' md:hidden'>
 						<button
 							type='button'
 							className={`md:hidden  nav-icon  ${
