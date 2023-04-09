@@ -340,6 +340,7 @@ exports.getLoginUserTransactions = catchAsyncErrors(async (req, res, next) => {
 exports.sendGem = catchAsyncErrors(async (req, res, next) => {
 	const sender = await User.findById(req.user._id);
 	const { recipientId, amount } = req.body;
+	console.log(recipientId, amount);
 	const recipient = await User.findOne({ customer_id: recipientId });
 	if (!recipient) {
 		return next(new ErrorHander('No user found with that id', 404));

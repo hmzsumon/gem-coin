@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const {
 	createTransaction,
 	getUserTransactions,
@@ -10,6 +11,7 @@ const {
 const { isAuthenticatedUser } = require('../middleware/auth');
 
 const router = express.Router();
+const upload = multer({});
 
 router.route('/transaction').get(createTransaction);
 router.route('/transaction/new').post(isAuthenticatedUser, createTransaction);
@@ -25,6 +27,6 @@ router
 	.route('/my/transactions')
 	.get(isAuthenticatedUser, getLoginUserTransactions);
 
-router.route('/send/gem').post(isAuthenticatedUser, sendGem);
+router.route('/send/gem').post(upload.none(), isAuthenticatedUser, sendGem);
 
 module.exports = router;
