@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
 import { AiTwotoneHome } from 'react-icons/ai';
 import { GiMining, GiWallet } from 'react-icons/gi';
 import { VscHistory } from 'react-icons/vsc';
+import { ListItemIcon } from '@mui/material';
 
 export default function SideNave() {
 	const navigate = useNavigate();
@@ -34,13 +35,13 @@ export default function SideNave() {
 		},
 		{
 			id: 11,
-			name: 'GMC Wallet',
+			name: 'Wallet',
 			icon: <GiWallet />,
 			link: () => navigate('/wallets'),
 		},
 		{
 			id: 2,
-			name: 'Refer & Earn',
+			name: 'Referral',
 			icon: <FaShareAlt />,
 			link: () => navigate('/referral'),
 		},
@@ -138,15 +139,15 @@ export default function SideNave() {
 			<List>
 				{items.map((item, index) => (
 					<ListItem
-						sx={{ color: '#fff' }}
+						sx={{ color: '#4D6935' }}
 						key={item}
 						disablePadding
 						onClick={item.link}
 					>
 						<ListItemButton>
-							{/* <ListItemIcon className='text-red-500 '>
-								<span className='text-white '>{item.icon}</span>
-							</ListItemIcon> */}
+							<ListItemIcon className='text-red-500 '>
+								<span className='text-[#4D6935] '>{item.icon}</span>
+							</ListItemIcon>
 							<ListItemText primary={item.name} />
 						</ListItemButton>
 					</ListItem>

@@ -72,6 +72,7 @@ exports.seedUser = catchAsyncErrors(async (req, res, next) => {
 // Register a user => /api/v1/register
 //=========================================================
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
+	const { name, username, email, password, phone, country } = req.body;
 	const referral_id = req.query.referral_id;
 	// console.log('referral_id', req.query);
 	// if referral id is provided
@@ -84,14 +85,19 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		ref_user.bonus_balance += 1;
 		ref_user.balance += 1;
 		ref_user.gem_coin += 4;
+		createTransaction(
+			ref_user._id,
+			'cashIn',
+			1,
+			'bonus',
+			`Referral bonus from ${name}`
+		);
 		await ref_user.save();
 	}
 
 	// let random_num = Math.floor(Math.random() * 10000000);
 	const random_num = uuidv4().toString().replace(/-/g, '');
 	const customer_id = `G${random_num}`;
-
-	const { name, username, email, password, phone, country } = req.body;
 
 	// unique phone number validation
 	const user = await User.findOne({ phone });

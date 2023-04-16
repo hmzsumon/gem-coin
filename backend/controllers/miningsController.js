@@ -40,6 +40,7 @@ exports.createMining = catchAsyncErrors(async (req, res, next) => {
 	user.balance -= 10;
 	const pxc = 10 / lastPrice;
 	user.gem_coin -= pxc;
+	user.active_status = true;
 	createTransaction(user._id, 'cashOut', 10, 'Mining', 'Create Mining ID');
 	await user.save();
 

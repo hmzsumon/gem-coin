@@ -9,6 +9,7 @@ html {
 }
 body {
 	font-family: 'Arimo', sans-serif !important;
+	position: relative;
 }
 .my-6 {
 	margin-top: 0;

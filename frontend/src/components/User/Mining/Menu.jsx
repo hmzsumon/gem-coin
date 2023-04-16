@@ -18,7 +18,7 @@ const miningsMenuItems = [
 	},
 	{
 		id: 2,
-		name: 'Investment',
+		name: 'Select Package',
 		icon: <GiPayMoney />,
 		path: '/mining/investment',
 	},
