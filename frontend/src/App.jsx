@@ -34,6 +34,7 @@ import ComingPage from './pages/ComingPage';
 import EmailVerification from './components/User/Verification/EmailVerification';
 import ForgotPassword from './components/User/ResetPass/ForgotPassword';
 import PasswordReset from './components/User/ResetPass/PasswordReset';
+import CreateWithdraw from './components/User/Withdraw/CreateWithdraw';
 
 const App = () => {
 	return (
@@ -78,6 +79,7 @@ const App = () => {
 					<Route path='/history' element={<History />} />
 					<Route path='/all-history' element={<AllHistory />} />
 					<Route path='/coming-sone' element={<ComingSone />} />
+					<Route path='/create-withdraw' element={<CreateWithdraw />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>

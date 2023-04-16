@@ -19,18 +19,28 @@ exports.createMining = catchAsyncErrors(async (req, res, next) => {
 	const lastPrice = prices[priceLength - 1].price;
 	req.body.user = req.user.id;
 	const user = await User.findById(req.user.id);
+
+	if (!user) {
+		return next(new ErrorHander('No user found with that ID', 404));
+	}
 	// console.log(req.user.id);
-	if (user.balance < 50) {
+	if (user.balance < 10) {
 		return next(new ErrorHander('Insufficient balance', 400));
+	}
+
+	// find sponsor
+	const sponsor = await User.findOne({ mining_id: req.body.sponsor_id });
+	if (!sponsor) {
+		return next(new ErrorHander('No sponsor found with that ID', 404));
 	}
 
 	let id = crypto.randomBytes(13).toString('hex');
 	const miningId = `G${id}`;
 	user.mining_id = miningId;
-	user.balance -= 50;
-	const pxc = 50 / lastPrice;
+	user.balance -= 10;
+	const pxc = 10 / lastPrice;
 	user.gem_coin -= pxc;
-	createTransaction(user._id, 'cashOut', 50, 'Mining', 'Create Mining ID');
+	createTransaction(user._id, 'cashOut', 10, 'Mining', 'Create Mining ID');
 	await user.save();
 
 	const mining = await Mining.create({
@@ -39,6 +49,17 @@ exports.createMining = catchAsyncErrors(async (req, res, next) => {
 		mining_id: miningId,
 		mining_status: 'active',
 	});
+
+	// update sponsor balance
+	sponsor.withdrawal_balance += 1;
+	createTransaction(
+		sponsor._id,
+		'cashIn',
+		1,
+		'Mining',
+		`Sponsor bonus for ${user.name} cerate mining id`
+	);
+	await sponsor.save();
 
 	res.status(201).json({
 		success: true,

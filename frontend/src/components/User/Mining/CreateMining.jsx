@@ -22,7 +22,7 @@ const CreateMining = () => {
 		if (error) {
 			toast.error(error.data.message);
 			if (error.data.message === 'Insufficient balance') {
-				navigate('/buy-pxc');
+				navigate('/buy-gem');
 			}
 		}
 		if (isSuccess) {

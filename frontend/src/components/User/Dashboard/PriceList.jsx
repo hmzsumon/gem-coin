@@ -33,7 +33,7 @@ const PriceList = ({ title, chance, lastPrice, bgColor }) => {
 									<td className='text-yellow-400 '>{lastPrice}</td>
 								</tr>
 								<tr className=''>
-									<td>15 Apr 2023</td>
+									<td>01 My 2023</td>
 								</tr>
 							</div>
 						</tbody>

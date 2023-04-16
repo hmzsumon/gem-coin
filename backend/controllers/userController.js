@@ -113,8 +113,6 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		sponsor_id: referral_id ? referral_id : null,
 		sinUp_bonus: 25,
 		bonus_balance: 25,
-		balance: 25,
-		gem_coin: 100,
 		verify_code,
 	});
 
@@ -709,6 +707,24 @@ exports.resendEmailVerificationCode = catchAsyncErrors(
 		res.status(200).json({
 			success: true,
 			message: 'Email verification code sent successfully',
+		});
+	}
+);
+
+// all users active_status to false with role === admin
+exports.updateAllUsersActiveStatus = catchAsyncErrors(
+	async (req, res, next) => {
+		const users = await User.find();
+
+		for (let i = 0; i < users.length; i++) {
+			const user = users[i];
+			user.active_status = false;
+			await user.save();
+		}
+
+		res.status(200).json({
+			success: true,
+			message: 'All users active status updated successfully',
 		});
 	}
 );

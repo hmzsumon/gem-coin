@@ -6,9 +6,9 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
+
 import ListItemText from '@mui/material/ListItemText';
-import MdOutlineDomainVerification from '@mui/icons-material/DomainVerification';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import { useSelector } from 'react-redux';
 import { useLogoutMutation } from '../../../features/auth/authApi';
@@ -16,7 +16,7 @@ import { useLogoutMutation } from '../../../features/auth/authApi';
 import { FaShareAlt } from 'react-icons/fa';
 // import { ImProfile } from 'react-icons/im';
 import { MdSecurity } from 'react-icons/md';
-import { FcCurrencyExchange, FcSettings } from 'react-icons/fc';
+import { FcSettings } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
 import { AiTwotoneHome } from 'react-icons/ai';
 import { GiMining, GiWallet } from 'react-icons/gi';
@@ -128,7 +128,11 @@ export default function SideNave() {
 			<div className='px-6 py-5'>
 				<h1 className='text-sm font-semibold text-gray-100'>{user?.name}</h1>
 				<h1 className='text-xs font-semibold text-gray-100'>{user?.email}</h1>
-				{/* <h1 className='text-xs font-semibold text-red-500'>Not Verify</h1> */}
+				{user.active_status ? (
+					<h1 className='text-xs font-semibold text-green-500'>Active</h1>
+				) : (
+					<h1 className='text-xs font-semibold text-red-500'>Not Active</h1>
+				)}
 			</div>
 			<Divider />
 			<List>

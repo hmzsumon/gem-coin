@@ -7,12 +7,13 @@ import { FaHome } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { GiPayMoney } from 'react-icons/gi';
 import { MdArrowBack } from 'react-icons/md';
+import { GiMining } from 'react-icons/gi';
 
 const miningsMenuItems = [
 	{
 		id: 1,
 		name: 'Mining',
-		icon: <FaHome />,
+		icon: <GiMining />,
 		path: '/mining',
 	},
 	{

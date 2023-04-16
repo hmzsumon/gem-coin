@@ -20,7 +20,20 @@ const Menu = () => {
 			link: '/wallets',
 			value: Number(user?.gem_coin).toFixed(8),
 		},
-		{ id: 6, name: 'Withdraw', link: '/coming-sone', value: '0.00' },
+		{
+			id: 6,
+			name: 'Withdraw',
+			link: '/create-withdraw',
+			value: `$${user?.withdrawal_balance}`,
+		},
+		{
+			id: 2,
+			name: 'Signup Bonus',
+			link: '/coming-sone',
+			value: `$${user?.sinUp_bonus}`,
+		},
+		{ id: 2, name: 'Mining', link: '/coming-sone', value: '0.00' },
+		{ id: 2, name: 'Cash Back', link: '/coming-sone', value: '0.00' },
 		{ id: 2, name: 'Swap', link: '/coming-sone' },
 		{ id: 4, name: 'Send', link: '/send' },
 		{ id: 5, name: 'Receive', link: '/receive' },
@@ -30,11 +43,11 @@ const Menu = () => {
 			<div className='grid grid-cols-3 gap-6 p-2 '>
 				{menuItems.map((item) => (
 					<Link to={item.link} key={item.id}>
-						<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-amber-700 hover:bg-slate-700'>
-							<span c className='text-sm italic'>
+						<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-[#9BD36A] hover:bg-slate-700'>
+							<span c className='text-sm text-slate-800 font-bold '>
 								{item.name}
 							</span>
-							<span className='text-xs'>{item.value}</span>
+							<span className='text-xs text-blue-700'>{item.value}</span>
 						</li>
 					</Link>
 				))}

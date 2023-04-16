@@ -28,6 +28,7 @@ const {
 	updateAllUsersBalance2,
 	verifyEmail,
 	resendEmailVerificationCode,
+	updateAllUsersActiveStatus,
 } = require('../controllers/userController');
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 const User = require('../models/userModel');
@@ -110,5 +111,8 @@ router.route('/update-pxc-mining').put(updatePxcMining);
 
 // update all users balance
 router.route('/update-all-users-balance').put(updateAllUsersBalance2);
+
+// update all users active status
+router.route('/update-all-users-active-status').put(updateAllUsersActiveStatus);
 
 module.exports = router;

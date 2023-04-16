@@ -15,7 +15,7 @@ const Topbar = () => {
 							<img src={logo} alt='logo' className='w-8' />
 						</Link>
 						<h1 className='ml-2 text-sm font-bold text-gray-100 uppercase md:text-xl'>
-							Gmc
+							GEMCOIN
 						</h1>
 					</div>
 				</div>

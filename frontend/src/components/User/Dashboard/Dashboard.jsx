@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from './Carousel';
+
 import Layout from './Layout/Layout';
 import Menu from './Menu';
 import Notice from './Notice';
@@ -13,7 +13,6 @@ const Dashboard = () => {
 	return (
 		<Layout>
 			<div className='h-full pb-20 space-y-2 '>
-				<Notice />
 				<Menu />
 				{/* <Carousel /> */}
 				<PriceList

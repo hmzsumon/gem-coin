@@ -118,7 +118,7 @@ const userSchema = new mongoose.Schema(
 		},
 		active_status: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
 		address_verified: {
 			type: Boolean,
