@@ -23,7 +23,7 @@ const Dashboard = () => {
 				/>
 				<div className='items-center grid-cols-5 gap-6 md:grid'>
 					<a
-						href='https://www.facebook.coğm/profile.php?id=100091058298913'
+						href='https://www.facebook.com/profile.php?id=100091058298913'
 						target='_blank'
 						rel='noreferrer'
 						className='flex items-center justify-center w-full h-12 text-white bg-blue-600 rounded-md hover:bg-blue-700'
