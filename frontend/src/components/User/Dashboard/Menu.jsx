@@ -18,7 +18,7 @@ const Menu = () => {
 			id: 3,
 			name: 'Gemcoin',
 			link: '/wallets',
-			value: Number(user?.gem_coin).toFixed(8),
+			value: Number(user?.gem_coin).toFixed(0),
 		},
 		{
 			id: 6,
@@ -28,7 +28,7 @@ const Menu = () => {
 		},
 		{
 			id: 2,
-			name: 'Signup Bonus',
+			name: 'Bonus',
 			link: '/coming-sone',
 			value: `$${user?.sinUp_bonus}`,
 		},
@@ -44,7 +44,7 @@ const Menu = () => {
 				{menuItems.map((item) => (
 					<Link to={item.link} key={item.id}>
 						<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-[#9BD36A] hover:bg-slate-700'>
-							<span c className='text-sm text-slate-800 font-bold '>
+							<span c className='text-sm font-bold text-slate-800 '>
 								{item.name}
 							</span>
 							<span className='text-xs text-blue-700'>{item.value}</span>

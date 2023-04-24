@@ -7,8 +7,11 @@ const createTransaction = require('../utils/tnx');
 // create a pxc price
 exports.createPxcPrice = catchAsyncErrors(async (req, res, next) => {
 	const users = await User.find();
+	console.log(req.body.price);
+	const { price } = req.body;
+	const numPrice = Number(price);
 	const newPxcPrice = new PxcPrice({
-		price: req.body.price,
+		price: numPrice,
 	});
 	const pxcPrice = await newPxcPrice.save();
 
@@ -16,7 +19,7 @@ exports.createPxcPrice = catchAsyncErrors(async (req, res, next) => {
 		if (user.balance === 0) {
 			return;
 		}
-		user.balance = user.pxc_balance * pxcPrice.price;
+		user.gem_coin = user.gem_coin * pxcPrice.price;
 		await user.save();
 	});
 

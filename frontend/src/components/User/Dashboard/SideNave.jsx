@@ -22,6 +22,9 @@ import { AiTwotoneHome } from 'react-icons/ai';
 import { GiMining, GiWallet } from 'react-icons/gi';
 import { VscHistory } from 'react-icons/vsc';
 import { ListItemIcon } from '@mui/material';
+import { RiLuggageDepositLine } from 'react-icons/ri';
+import { AiFillShopping } from 'react-icons/ai';
+import { BsCashCoin } from 'react-icons/bs';
 
 export default function SideNave() {
 	const navigate = useNavigate();
@@ -70,12 +73,31 @@ export default function SideNave() {
 			link: () => navigate('/history'),
 		},
 
-		// {
-		// 	id: 3,
-		// 	name: 'Profile',
-		// 	icon: <ImProfile />,
-		// 	link: () => navigate('/profile'),
-		// },
+		{
+			id: 33,
+			name: 'Cash Back',
+			icon: <BsCashCoin />,
+			link: () => navigate('/coming-sone'),
+		},
+
+		{
+			id: 30,
+			name: 'FDR',
+			icon: <RiLuggageDepositLine />,
+			link: () => navigate('/coming-sone'),
+		},
+		{
+			id: 31,
+			name: 'NFT',
+			icon: <AiFillShopping />,
+			link: () => navigate('/coming-sone'),
+		},
+		{
+			id: 32,
+			name: 'NFT Marketplace',
+			icon: <AiFillShopping />,
+			link: () => navigate('/coming-sone'),
+		},
 		{
 			id: 4,
 			name: 'Security',
@@ -119,7 +141,7 @@ export default function SideNave() {
 	const list = (anchor) => (
 		<Box
 			sx={{
-				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 150,
+				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 200,
 				backgroundColor: '#0F141D',
 			}}
 			role='presentation'
@@ -139,14 +161,14 @@ export default function SideNave() {
 			<List>
 				{items.map((item, index) => (
 					<ListItem
-						sx={{ color: '#4D6935' }}
+						sx={{ color: '#fff' }}
 						key={item}
 						disablePadding
 						onClick={item.link}
 					>
 						<ListItemButton>
 							<ListItemIcon className='text-red-500 '>
-								<span className='text-[#4D6935] '>{item.icon}</span>
+								<span className='text-white '>{item.icon}</span>
 							</ListItemIcon>
 							<ListItemText primary={item.name} />
 						</ListItemButton>
