@@ -1,72 +1,25 @@
 const nodeMailer = require('nodemailer');
-const { google } = require('googleapis');
+const Sib = require('sib-api-v3-sdk');
+const client = Sib.ApiClient.instance;
+const apiKey = client.authentications['api-key'];
+apiKey.apiKey = process.env.SENDINBLUE_API_KEY;
 
-const CLIENT_ID = process.env.CLIENT_ID;
-
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const REDIRECT_URI = process.env.REDIRECT_URI;
-const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
-
-const oauth2Client = new google.auth.OAuth2(
-	CLIENT_ID,
-	CLIENT_SECRET,
-	REDIRECT_URI
-);
-
-oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
-
-// const sendEmail2 = async (options) => {
-// 	try {
-// 		const accessToken = await oauth2Client.getAccessToken();
-// 		const transport = nodeMailer.createTransport({
-// 			service: 'gmail',
-// 			auth: {
-// 				type: 'OAuth2',
-// 				user: "payunxgetway@gmail.com",
-// 				clientId: CLIENT_ID,
-// 				clientSecret: CLIENT_SECRET,
-// 				refreshToken: REFRESH_TOKEN,
-// 				accessToken: accessToken,
-// 			}
-// 		});
-
-// 		const mailOptions = {
-// 			from: "payunxgetway@gmail.com",
-// 			to: options.to,
-// 			subject: options.subject,
-// 			text: options.text,
-// 			html: options.html
-// 		}
-
-// } catch (error) {
-// 	console.log(error);
-// }
-
-const sendEmail = async (options) => {
-	const accessToken = await oauth2Client.getAccessToken();
-	const transporter = nodeMailer.createTransport({
-		host: 'smtp.gmail.com',
-		port: 465,
-		secure: true,
-		auth: {
-			type: 'OAuth2',
-			user: 'replygemcoin@gmail.com',
-			clientId: CLIENT_ID,
-			clientSecret: CLIENT_SECRET,
-			refreshToken: REFRESH_TOKEN,
-			accessToken: accessToken,
-		},
-	});
-
-	const mailOptions = {
-		from: 'replygemcoin@gmail.com',
-		to: options.email,
-		subject: options.subject,
-		text: options.message,
-		html: options.html,
-	};
-
-	await transporter.sendMail(mailOptions);
+// send email
+const sendEmail = async (option) => {
+	try {
+		const apiInstance = new Sib.TransactionalEmailsApi();
+		const sendSmtpEmail = new Sib.SendSmtpEmail();
+		sendSmtpEmail.subject = option.subject;
+		sendSmtpEmail.htmlContent = option.message;
+		sendSmtpEmail.sender = {
+			name: 'Gemcoin',
+			email: 'replygemcoin@gmail.com',
+		};
+		sendSmtpEmail.to = [{ email: option.email }];
+		await apiInstance.sendTransacEmail(sendSmtpEmail);
+	} catch (err) {
+		console.log(err);
+	}
 };
 
 // send me email

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from './Layout/Layout';
 import Menu from './Menu';
-import Notice from './Notice';
+
 import PriceList from './PriceList';
 
 import { useGetPricesQuery } from '../../../features/prices/priceApi';
@@ -59,7 +59,7 @@ const Dashboard = () => {
 					</a>
 
 					<a
-						href='https://youtube.com/@GEMCOINcoin'
+						href='https://youtube.com/@GEMcoinGMC'
 						target='_blank'
 						rel='noreferrer'
 						className='flex items-center justify-center w-full h-12 mt-2 text-white bg-red-600 rounded-md hover:bg-red-700'

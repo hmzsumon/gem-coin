@@ -25,6 +25,7 @@ import { ListItemIcon } from '@mui/material';
 import { RiLuggageDepositLine } from 'react-icons/ri';
 import { AiFillShopping } from 'react-icons/ai';
 import { BsCashCoin } from 'react-icons/bs';
+import { RiTeamLine } from 'react-icons/ri';
 
 export default function SideNave() {
 	const navigate = useNavigate();
@@ -49,6 +50,18 @@ export default function SideNave() {
 			link: () => navigate('/referral'),
 		},
 		{
+			id: 3,
+			name: 'My Team',
+			icon: <RiTeamLine />,
+			link: () => navigate('/coming-sone'),
+		},
+		{
+			id: 9,
+			name: 'Stack',
+			icon: <GiMining />,
+			link: () => navigate('/mining'),
+		},
+		{
 			id: 12,
 			name: 'Buy GMC ',
 			icon: <GiWallet />,
@@ -60,12 +73,7 @@ export default function SideNave() {
 		// 	icon: <GiWallet />,
 		// 	link: () => navigate('/dashboard'),
 		// },
-		{
-			id: 9,
-			name: 'Mining',
-			icon: <GiMining />,
-			link: () => navigate('/mining'),
-		},
+
 		{
 			id: 10,
 			name: 'History',
