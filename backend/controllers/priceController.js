@@ -11,7 +11,7 @@ exports.createPrice = catchAsyncErrors(async (req, res, next) => {
 
 	const { amount } = req.body;
 	const mumAmount = Number(amount);
-	console.log(mumAmount);
+	// console.log(mumAmount);
 	// check amount = 0
 	if (req.body.amount === 0) {
 		return next(new ErrorHander('Please enter a valid amount', 400));
@@ -24,7 +24,7 @@ exports.createPrice = catchAsyncErrors(async (req, res, next) => {
 		if (user.balance === 0) {
 			return;
 		}
-		user.balance = user.pxc_balance * pxcPrice.price;
+		user.balance = user.gem_coin * pxcPrice.price;
 		await user.save();
 	});
 
