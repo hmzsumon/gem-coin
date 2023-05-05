@@ -17,7 +17,7 @@ const Dashboard = () => {
 				{/* <Carousel /> */}
 				<PriceList
 					title={'Gemcoin'}
-					chance={'99%'}
+					chance={'89%'}
 					bgColor='bg-green-500'
 					lastPrice={currentPrice?.price}
 				/>

@@ -106,7 +106,7 @@ const Header = () => {
 					</div>
 					{isAuthenticated && user?.email_verified ? (
 						<div>
-							<Link to='/dashboard'>
+							<Link to={user?.roll === "user" ? "/dashboard" : "/admin/dashboard"}>
 								<button className='px-4 py-2 text-sm font-semibold uppercase rounded-md md:bg-[#f1a619] hover:bg-[#f1a619] text-[#f1a619] md:text-white'>
 									Dashboard
 								</button>

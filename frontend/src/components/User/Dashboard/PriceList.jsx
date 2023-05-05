@@ -7,18 +7,18 @@ const PriceList = ({ title, chance, lastPrice, bgColor }) => {
 				<h1 className='italic font-semibold '> Price History</h1>
 				<div>
 					<table className='space-y-2'>
-						<thead className='grid grid-cols-2 text-xs italic '>
+						<thead className='grid grid-cols-2 text-xs italic  '>
 							<div className='col-span-1 '>
 								<tr className=''>
 									<th>Pair</th>
 								</tr>
 							</div>
-							<div className='flex items-center justify-between w-full col-span-1 '>
+							<div className='flex items-center gap-3 justify-between w-full col-span-1 '>
 								<tr>
-									<th>Last Price</th>
+									<th>Current Price</th>
 								</tr>
 								<tr className=''>
-									<th>Lunching</th>
+									<th>Chance</th>
 								</tr>
 							</div>
 						</thead>
@@ -32,8 +32,10 @@ const PriceList = ({ title, chance, lastPrice, bgColor }) => {
 								<tr>
 									<td className='text-yellow-400 '>{lastPrice}</td>
 								</tr>
-								<tr className=''>
-									<td>01 My 2023</td>
+								<tr className=' text-green-500'>
+									<td>
+										{chance}
+									</td>
 								</tr>
 							</div>
 						</tbody>
