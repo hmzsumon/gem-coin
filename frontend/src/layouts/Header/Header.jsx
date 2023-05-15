@@ -35,7 +35,7 @@ const navItems = [
 	{
 		id: 5,
 		title: 'Whitepaper',
-		path: '/coming',
+		path: '/white-paper',
 	},
 	// {
 	// 	id: 7,
@@ -158,20 +158,22 @@ const Header = () => {
 						</p>
 					</Link>
 					<div className='flex flex-col items-start justify-start gap-2 '>
-						{navItems.map((item) => (
-							<NavLink
-								key={item.id}
-								to={item.path}
-								className={({ isActive }) =>
-									`border-b pb-2 w-full  ${
-										isActive ? 'text-[#9467FE]' : 'text-[#fff]'
-									}`
-								}
-								onClick={() => setSidebarOpen(false)}
-							>
-								{item.title}
-							</NavLink>
-						))}
+						{navItems.map((item) => {
+							return (
+								<NavLink
+									key={item.id}
+									to={item.path}
+									className={({ isActive }) =>
+										`border-b pb-2 w-full  ${
+											isActive ? 'text-[#9467FE]' : 'text-[#fff]'
+										}`
+									}
+									onClick={() => setSidebarOpen(false)}
+								>
+									{item.title}
+								</NavLink>
+							);
+						})}
 					</div>
 					<div className='flex mt-10 '>
 						<div className='flex gap-2 mx-auto'>

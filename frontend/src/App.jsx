@@ -35,6 +35,7 @@ import EmailVerification from './components/User/Verification/EmailVerification'
 import ForgotPassword from './components/User/ResetPass/ForgotPassword';
 import PasswordReset from './components/User/ResetPass/PasswordReset';
 import CreateWithdraw from './components/User/Withdraw/CreateWithdraw';
+import WhitePaper from './pages/WhitePaper';
 
 const App = () => {
 	return (
@@ -48,6 +49,7 @@ const App = () => {
 				<Route path='/login' element={<Login />} />
 				<Route path='/signup' element={<Signup />} />
 				<Route path='/coming' element={<ComingPage />} />
+				<Route path='/white-paper' element={<WhitePaper />} />
 
 				<Route path='/email-verify' element={<EmailVerification />} />
 				<Route path='/forgot-password' element={<ForgotPassword />} />
