@@ -24,9 +24,7 @@ const Wallets = () => {
 					<h1 className='my-4 text-xl font-semibold text-gray-100'>Wallet</h1>
 					<div className='space-y-4 '>
 						<WalletCard01 user={user} />
-						<WalletUsdt user={user} />
 						<WalletMusd />
-						<WalletBusd />
 					</div>
 				</div>
 			)}

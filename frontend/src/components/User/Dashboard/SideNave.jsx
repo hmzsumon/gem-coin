@@ -49,24 +49,14 @@ export default function SideNave() {
 			icon: <FaShareAlt />,
 			link: () => navigate('/referral'),
 		},
-		{
-			id: 3,
-			name: 'My Team',
-			icon: <RiTeamLine />,
-			link: () => navigate('/coming-sone'),
-		},
+
 		{
 			id: 9,
-			name: 'Stack',
+			name: 'Mining',
 			icon: <GiMining />,
 			link: () => navigate('/mining'),
 		},
-		{
-			id: 12,
-			name: 'Buy GMC ',
-			icon: <GiWallet />,
-			link: () => navigate('/buy-gem'),
-		},
+
 		// {
 		// 	id: 13,
 		// 	name: 'Withdraw',
@@ -98,18 +88,6 @@ export default function SideNave() {
 			id: 31,
 			name: 'NFT',
 			icon: <AiFillShopping />,
-			link: () => navigate('/coming-sone'),
-		},
-		{
-			id: 32,
-			name: 'NFT Marketplace',
-			icon: <AiFillShopping />,
-			link: () => navigate('/coming-sone'),
-		},
-		{
-			id: 4,
-			name: 'Security',
-			icon: <MdSecurity />,
 			link: () => navigate('/coming-sone'),
 		},
 		{

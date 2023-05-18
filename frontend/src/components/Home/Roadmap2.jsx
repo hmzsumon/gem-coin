@@ -70,25 +70,22 @@ const data = [
 		title: 'December 2023',
 		description: [
 			'Exchange Listing Mother, Binance, KuCoin, MEXC and World top 10 Exchange. ',
-			'Our Target is 10 lakh users. GemCoin will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
+			'Our Target is 1 million lakh users. GemCoin will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
 		],
 	},
 ];
 
 const Roadmap2 = () => {
 	return (
-		<div className=' text-white bg-gray-800 px-4 md:px-16 py-10 '>
-			<h1 className=' md:text-xl tracking-wider my-4'>GEMCOIN Roadmap</h1>
-			<div className=' grid md:grid-cols-5'>
+		<div className='px-4 py-10 text-white bg-gray-800 md:px-16'>
+			<h1 className='my-4 tracking-wider md:text-xl'>GEMCOIN Roadmap</h1>
+			<div className='grid md:grid-cols-5'>
 				{data.map((item) => (
-					<div key={item.id} className=' border p-4'>
+					<div key={item.id} className='p-4 border '>
 						<h1 className='text-2xl font-bold'>{item.title}</h1>
-						<ul className=' p-2'>
+						<ul className='p-2 '>
 							{item.description.map((desc) => (
-								<li
-									key={desc}
-									className=' list-disc text-sm tracking-wide m-1 '
-								>
+								<li key={desc} className='m-1 text-sm tracking-wide list-disc '>
 									{desc}
 								</li>
 							))}

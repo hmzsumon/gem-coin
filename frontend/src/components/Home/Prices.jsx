@@ -67,7 +67,7 @@ const Prices = () => {
 
 			<div className='my-14 '>
 				<div className='border '>
-					<div className='grid grid-cols-5 py-2 text-xs text-white list-none md:text-sm bg-slate-800 '>
+					<div className='grid grid-cols-5 py-1 text-xs text-white list-none md:text-sm bg-slate-800 '>
 						<li className='text-center '>Symbol</li>
 						<li className='md:ml-20 '>Name</li>
 						<li className='md:ml-20'>USD</li>
@@ -76,7 +76,7 @@ const Prices = () => {
 					</div>
 					{priceData.map((item) => (
 						<div key={item.id}>
-							<div className='grid grid-cols-5 py-2 text-xs list-none md:text-sm text-slate-600 '>
+							<div className='grid grid-cols-5 py-1 text-xs list-none md:text-sm text-slate-600 '>
 								<li className='font-bold text-center '>{item.symbol}</li>
 								<li className='md:ml-20 '>{item.name}</li>
 								<li className='md:ml-20'>{item.usd}</li>
@@ -99,7 +99,7 @@ const Prices = () => {
 					))}
 				</div>
 				<div>
-					<img src={Image1} alt='' />
+					<img src={Image1} alt='' style={{ width: '2.5rem' }} />
 				</div>
 			</div>
 		</div>

@@ -6,63 +6,28 @@ import { RiSendPlaneFill } from 'react-icons/ri';
 const links = [
 	{
 		id: 1,
-		title: 'Forums',
-		link: '#',
+		title: 'Facebook',
+		link: 'https://www.facebook.com/profile.php?id=100091058298913',
 	},
 	{
 		id: 2,
-		title: 'News',
-		link: '#',
+		title: 'Instagram',
+		link: 'https://instagram.com/gemcoin_gmc',
 	},
 	{
 		id: 3,
-		title: 'Advertise',
-		link: '#',
+		title: 'Telegram',
+		link: 'https://t.me/gemcoinoffical',
 	},
 	{
 		id: 4,
-		title: 'Jobs',
-		link: '#',
+		title: 'Twitter',
+		link: 'https://twitter.com/Gemcoinoffical',
 	},
 	{
 		id: 5,
-		title: 'Wallets',
-		link: '#',
-	},
-	{
-		id: 6,
-		title: 'Guides',
-		link: '#',
-	},
-	{
-		id: 7,
-		title: 'FAQ',
-		link: '#',
-	},
-	{
-		id: 8,
-		title: 'Chart',
-		link: '#',
-	},
-	{
-		id: 9,
-		title: 'Terms of Service',
-		link: '#',
-	},
-	{
-		id: 10,
-		title: 'Privacy Policy',
-		link: '#',
-	},
-	{
-		id: 11,
-		title: 'Legal',
-		link: '#',
-	},
-	{
-		id: 12,
-		title: 'Partners',
-		link: '#',
+		title: 'Youtube',
+		link: 'https://youtube.com/@GEMcoinGMC',
 	},
 ];
 
@@ -71,9 +36,9 @@ const FooterTop = () => {
 		<div className='py-6 my-6 text-gray-300'>
 			<div className='grid justify-between md:grid-cols-3 gap-14'>
 				<div className='space-y-4 '>
-					<div className='flex-1 flex items-center'>
+					<div className='flex items-center flex-1'>
 						<img src={Logo} alt='' className='w-10 ' />
-						<h2 className=' font-bold tracking-wide text-white text-xl '>
+						<h2 className='text-xl font-bold tracking-wide text-white '>
 							GEMCOIN
 						</h2>
 					</div>
@@ -101,9 +66,9 @@ const FooterTop = () => {
 				</div>
 
 				<div className='px-4 '>
-					<h2 className='text-[#F1A619]'>QUICK LINK</h2>
+					<h2 className='text-[#F1A619]'>SOCIAL LINK</h2>
 
-					<div className='grid grid-cols-2 gap-2 mt-2'>
+					<div className='grid grid-cols-1 gap-2 mt-2'>
 						{links.map((link) => (
 							<div key={link.id}>
 								<a href={link.link} className='text-gray-300'>
@@ -118,10 +83,10 @@ const FooterTop = () => {
 				<div className='px-4 '>
 					<h2 className='text-[#F1A619]'>CONTACT</h2>
 					<p>
-						<span className='text-gray-500 '>Address: </span> GEMCoin Building
-						No-2, Dubai Digital Park, Dubai, UAE <br />
-						<span className='text-gray-500 '>Phone: </span> +971 56 179 1590{' '}
+						GEM MEDIA CHAIN (GMC)
+						<br /> GEMCoin Building No-2, Dubai Digital Park, Dubai, UAE <br />
 						<br />
+						<span className='text-gray-500 '>Email: </span> info@gemcoin.global
 						<span className='text-gray-500 '>Email: </span> gemcoinuae@gmail.com
 					</p>
 				</div>
