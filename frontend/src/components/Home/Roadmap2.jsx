@@ -70,7 +70,7 @@ const data = [
 		title: 'December 2023',
 		description: [
 			'Exchange Listing Mother, Binance, KuCoin, MEXC and World top 10 Exchange. ',
-			'Our Target is 1 million lakh users. GemCoin will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
+			'Our Target is 3 million  users. GemCoin will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
 		],
 	},
 ];
