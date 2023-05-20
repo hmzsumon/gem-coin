@@ -75,20 +75,20 @@ export default function SideNave() {
 			id: 33,
 			name: 'Cash Back',
 			icon: <BsCashCoin />,
-			link: () => navigate('/coming-sone'),
+			link: () => navigate('/cashback'),
 		},
 
 		{
 			id: 30,
 			name: 'FDR',
 			icon: <RiLuggageDepositLine />,
-			link: () => navigate('/coming-sone'),
+			link: () => navigate('/fdr'),
 		},
 		{
 			id: 31,
 			name: 'NFT',
 			icon: <AiFillShopping />,
-			link: () => navigate('/coming-sone'),
+			link: () => navigate('/nft'),
 		},
 		{
 			id: 5,

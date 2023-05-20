@@ -36,6 +36,9 @@ import ForgotPassword from './components/User/ResetPass/ForgotPassword';
 import PasswordReset from './components/User/ResetPass/PasswordReset';
 import CreateWithdraw from './components/User/Withdraw/CreateWithdraw';
 import WhitePaper from './pages/WhitePaper';
+import Fdr from './components/User/FDR/Fdr';
+import Nft from './components/User/NFT/Nft';
+import CashBack from './components/User/CashBack/CashBack';
 
 const App = () => {
 	return (
@@ -82,6 +85,9 @@ const App = () => {
 					<Route path='/all-history' element={<AllHistory />} />
 					<Route path='/coming-sone' element={<ComingSone />} />
 					<Route path='/create-withdraw' element={<CreateWithdraw />} />
+					<Route path='/fdr' element={<Fdr />} />
+					<Route path='/nft' element={<Nft />} />
+					<Route path='/cashback' element={<CashBack />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>

@@ -1,58 +1,57 @@
 import React from 'react';
 import Image1 from '../../assets/images/page/cryptoprices.jpg';
 
-const priceData = [
-	{
-		id: 1,
-		symbol: 'GEM',
-		name: 'GEMCoin',
-		usd: '0.25',
-		change24h: 8.63,
-		change7d: 2.9,
-	},
-	{
-		id: 2,
-		symbol: 'BTC',
-		name: 'Bitcoin',
-		usd: '11,703',
-		change24h: 8.63,
-		change7d: 2.9,
-	},
-	{
-		id: 3,
-		symbol: 'ETH',
-		name: 'Ethereum',
-		usd: '1,000',
-		change24h: 12.63,
-		change7d: 8.19,
-	},
-	{
-		id: 4,
-		symbol: 'XRP',
-		name: 'Ripple',
-		usd: '1.375',
-		change24h: -2.14,
-		change7d: -0.63,
-	},
-	{
-		id: 5,
-		symbol: 'LTC',
-		name: 'Litecoin',
-		usd: '185.8',
-		change24h: 4.89,
-		change7d: -1.31,
-	},
-	{
-		id: 6,
-		symbol: 'XMR',
-		name: 'Monero',
-		usd: '328.8',
-		change24h: -5.98,
-		change7d: 1.15,
-	},
-];
-
 const Prices = () => {
+	const priceData = [
+		{
+			id: 1,
+			symbol: 'GEM',
+			name: 'GEMCoin',
+			usd: '20',
+			change24h: 8.63,
+			change7d: 2.9,
+		},
+		{
+			id: 2,
+			symbol: 'BTC',
+			name: 'Bitcoin',
+			usd: '11,703',
+			change24h: 8.63,
+			change7d: 2.9,
+		},
+		{
+			id: 3,
+			symbol: 'ETH',
+			name: 'Ethereum',
+			usd: '1,000',
+			change24h: 12.63,
+			change7d: 8.19,
+		},
+		{
+			id: 4,
+			symbol: 'XRP',
+			name: 'Ripple',
+			usd: '1.375',
+			change24h: -2.14,
+			change7d: -0.63,
+		},
+		{
+			id: 5,
+			symbol: 'LTC',
+			name: 'Litecoin',
+			usd: '185.8',
+			change24h: 4.89,
+			change7d: -1.31,
+		},
+		{
+			id: 6,
+			symbol: 'XMR',
+			name: 'Monero',
+			usd: '328.8',
+			change24h: -5.98,
+			change7d: 1.15,
+		},
+	];
 	return (
 		<div className=' px-2 md:px-10 py-16  bg-[#f7f7f7] '>
 			<div className='space-y-4 '>

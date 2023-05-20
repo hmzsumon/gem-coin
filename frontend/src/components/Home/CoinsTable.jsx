@@ -22,28 +22,30 @@ import GemLogo from '../../assets/images/logo-blue.png';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Container } from '@mui/system';
+import { useGetPricesQuery } from '../../features/prices/priceApi';
 
 export function numberWithCommas(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-const gemCoins = [
-	{
-		id: 'gemcoin',
-		symbol: 'gmc',
-		name: 'GEMCoin',
-		usd: '0.25',
-		change24h: 8.63,
-		change7d: 2.9,
-		current_price: 0.25,
-		price_change_percentage_24h: 8.63,
-		market_cap: 543433096809,
-		image: GemLogo,
-	},
-];
-
 const CoinsTable = () => {
-	const navigate = useNavigate();
+	const { data, isLoading } = useGetPricesQuery();
+	const { currentPrice } = data || {};
+
+	const gemCoins = [
+		{
+			id: 'gemcoin',
+			symbol: 'gmc',
+			name: 'GEMCoin',
+			usd: currentPrice?.price,
+			change24h: 8.63,
+			change7d: 2.9,
+			current_price: currentPrice?.price,
+			price_change_percentage_24h: 8.63,
+			market_cap: 543433096809,
+			image: GemLogo,
+		},
+	];
 	const [coins, setCoins] = useState([]);
 	console.log('coins: ', coins);
 	const [loading, setLoading] = useState(false);
@@ -94,7 +96,7 @@ const CoinsTable = () => {
 						onChange={(e) => setSearch(e.target.value)}
 					/>
 					<TableContainer component={Paper}>
-						{loading ? (
+						{loading || isLoading ? (
 							<LinearProgress style={{ backgroundColor: 'gold' }} />
 						) : (
 							<Table sx={{ minWidth: 650 }} aria-label='simple table'>
