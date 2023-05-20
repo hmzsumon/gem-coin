@@ -85,10 +85,16 @@ const FooterTop = () => {
 					<p>
 						GEM MEDIA CHAIN (GMC)
 						<br /> GEMCoin Building No-2, Dubai Digital Park, Dubai, UAE <br />
-						<br />
-						<span className='text-gray-500 '>Email: </span> info@gemcoin.global
-						<span className='text-gray-500 '>Email: </span> gemcoinuae@gmail.com
 					</p>
+					<div className='flex space-x-2 '>
+						<div>
+							<p className='text-gray-500 '>Email: </p>
+						</div>
+						<div>
+							<p>info@gemcoin.global</p>
+							<p>gemcoinuae@gmail.com</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

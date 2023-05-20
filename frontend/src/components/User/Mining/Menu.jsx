@@ -12,13 +12,13 @@ import { GiMining } from 'react-icons/gi';
 const miningsMenuItems = [
 	{
 		id: 1,
-		name: 'Stack',
+		name: 'Mining',
 		icon: <GiMining />,
 		path: '/mining',
 	},
 	{
 		id: 2,
-		name: 'Stack Package',
+		name: 'Mining Package',
 		icon: <GiPayMoney />,
 		path: '/mining/investment',
 	},

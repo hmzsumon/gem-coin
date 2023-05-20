@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Layout from '../Dashboard/Layout/Layout';
 import { BsArrowLeftSquare } from 'react-icons/bs';
 
@@ -7,17 +7,15 @@ const Settings = () => {
 	return (
 		<Layout>
 			<div className='h-screen'>
-				<div className='w-11/12 h-[60%] mx-auto p-2 md:w-1/2 rounded bg-slate-800 mt-10'>
-					<div className='flex flex-col items-center justify-center h-full space-y-5 '>
-						<h1 className='text-2xl font-bold text-gray-100'>
-							Settings is coming soon
-						</h1>
-						<Link to='/dashboard' className='flex space-x-2 text-green-500 '>
-							<span>
-								<BsArrowLeftSquare className='text-2xl text-green-500' />
-							</span>
-							<span>Go Back</span>
-						</Link>
+				<div className='flex items-center justify-center w-11/12 h-[60%] mx-auto p-2 md:w-1/2 rounded bg-slate-800 mt-10'>
+					<div className='grid gap-4 md:grid-cols-2'>
+						<button className='flex px-2 py-1 text-center text-white bg-green-500 '>
+							Profile Settings
+						</button>
+
+						<button className='flex px-2 py-1 text-center text-white bg-orange-500'>
+							Security Settings
+						</button>
 					</div>
 				</div>
 			</div>

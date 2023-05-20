@@ -94,7 +94,7 @@ export default function SideNave() {
 			id: 5,
 			name: 'Settings',
 			icon: <FcSettings />,
-			link: () => navigate('/coming-sone'),
+			link: () => navigate('/settings'),
 		},
 		// {
 		// 	id: 7,

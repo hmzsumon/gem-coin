@@ -39,6 +39,7 @@ import WhitePaper from './pages/WhitePaper';
 import Fdr from './components/User/FDR/Fdr';
 import Nft from './components/User/NFT/Nft';
 import CashBack from './components/User/CashBack/CashBack';
+import Settings from './components/User/Settings/Settings';
 
 const App = () => {
 	return (
@@ -88,6 +89,7 @@ const App = () => {
 					<Route path='/fdr' element={<Fdr />} />
 					<Route path='/nft' element={<Nft />} />
 					<Route path='/cashback' element={<CashBack />} />
+					<Route path='/settings' element={<Settings />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>

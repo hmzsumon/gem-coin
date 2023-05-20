@@ -90,7 +90,7 @@ const Token = () => {
 									<p className='text-xs tracking-widest uppercase text-violet-600'>
 										Decimals
 									</p>
-									<p className='text-xs text-gray-500'>5</p>
+									<p className='text-xs text-gray-500'>18</p>
 								</div>
 							</li>
 						</div>
@@ -104,7 +104,7 @@ const Token = () => {
 										Contract
 									</p>
 									<p className='text-xs text-gray-500'>
-										0x81e13F87320C4bf94D5df209D8981058A6DE20F9
+										0x431Dcf5105DED927ee4fEC4EE3181c4D3D08EBe9
 									</p>
 								</div>
 							</li>
