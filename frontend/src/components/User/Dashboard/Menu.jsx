@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom';
+import { FadeLoader } from 'react-spinners';
 
-const Menu = ({ user }) => {
+const Menu = ({ isLoading }) => {
+	const { user } = useSelector((state) => state.auth);
 	const menuItems = [
 		{
 			id: 1,
@@ -58,20 +61,26 @@ const Menu = ({ user }) => {
 
 	return (
 		<>
-			<div className='rounded-md '>
-				<div className='grid grid-cols-3 gap-6 p-2 '>
-					{menuItems.map((item) => (
-						<Link to={item.link} key={item.id}>
-							<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-[#9BD36A] hover:bg-slate-700'>
-								<span c className='text-sm font-bold text-slate-800 '>
-									{item.name}
-								</span>
-								<span className='text-xs text-blue-700'>{item.value}</span>
-							</li>
-						</Link>
-					))}
+			{isLoading ? (
+				<div className='flex items-center justify-center w-full h-screen'>
+					<FadeLoader color={'#fbbf24'} />
 				</div>
-			</div>
+			) : (
+				<div className='rounded-md '>
+					<div className='grid grid-cols-3 gap-6 p-2 '>
+						{menuItems.map((item) => (
+							<Link to={item.link} key={item.id}>
+								<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-[#9BD36A] hover:bg-slate-700'>
+									<span c className='text-sm font-bold text-slate-800 '>
+										{item.name}
+									</span>
+									<span className='text-xs text-blue-700'>{item.value}</span>
+								</li>
+							</Link>
+						))}
+					</div>
+				</div>
+			)}
 		</>
 	);
 };

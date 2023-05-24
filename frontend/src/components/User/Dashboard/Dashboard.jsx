@@ -13,13 +13,13 @@ const Dashboard = () => {
 
 	return (
 		<Layout>
-			{isLoading ? (
+			{isLoading && user?.balance !== 'undefine' ? (
 				<div className='flex items-center justify-center w-full h-screen'>
 					<FadeLoader color={'#fbbf24'} />
 				</div>
 			) : (
 				<div className='h-full pb-20 space-y-2 '>
-					<Menu user={user} />
+					<Menu user={user} isLoading={isLoading} />
 					{/* <Carousel /> */}
 					<PriceList
 						title={'Gemcoin'}

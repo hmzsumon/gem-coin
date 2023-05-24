@@ -79,8 +79,6 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 		if (!ref_user) {
 			new Error('User not found');
 		}
-		ref_user.referral_bonus += 1;
-		ref_user.bonus_balance += 1;
 		ref_user.balance += 1;
 		ref_user.gem_coin += 4;
 		createTransaction(
