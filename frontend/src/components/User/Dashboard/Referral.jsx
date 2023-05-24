@@ -26,12 +26,11 @@ const Referral = () => {
 
 					<div>
 						<h2 className='text-xl font-semibold '>
-							How To Use Are Your Referral Code in 3 Easy Stapes
+							How To USE Are Your Referral Link In 3 Easy Stapes
 						</h2>
 						<p className='text-xs '>
-							1. Copy Your Referral Link 2. Invited Your Friends Get <br /> 5
-							Mother Coin For Each Friend <br /> 3. Get Reward Rewards Deposit
-							rate 5% <br /> 4. Enjoy Your Referral Bonus
+							1. Copy Your Reffarel Link Invited Your Friends <br /> 2. Gemcoin
+							For Each Friend <br /> 3. Get Reward 4 Gemcoin{' '}
 						</p>
 					</div>
 				</div>

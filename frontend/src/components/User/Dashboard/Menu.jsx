@@ -9,9 +9,7 @@ const Menu = ({ user }) => {
 			name: 'USDT',
 			link: '/wallets',
 			value: `$${
-				user?.usdt_balance
-					? Number(user?.usdt_balance).toFixed(2)
-					: Number(0).toFixed(2)
+				user?.balance ? Number(user?.balance).toFixed(2) : Number(0).toFixed(2)
 			}`,
 		},
 		{

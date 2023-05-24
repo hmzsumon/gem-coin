@@ -9,6 +9,7 @@ import Everything from '../components/Home/Everything';
 import Token from '../components/Home/Token';
 import Roadmap2 from '../components/Home/Roadmap2';
 import CoinsTable from '../components/Home/CoinsTable';
+import Roadmap from '../components/Home/Roadmap';
 const HomePage = () => {
 	return (
 		<TemplateLayout>
@@ -16,7 +17,7 @@ const HomePage = () => {
 				<Hero />
 				<About />
 				<Features />
-				<Roadmap2 />
+				<Roadmap />
 				<CoinsTable />
 				<Token />
 				<Everything />

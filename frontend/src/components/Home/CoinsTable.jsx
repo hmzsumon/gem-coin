@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import { CoinList } from '../../config/api';
-import { useNavigate } from 'react-router-dom';
+
 import { CryptoState } from '../../CryptoContext';
 
 import GemLogo from '../../assets/images/logo-blue.png';
@@ -37,10 +37,10 @@ const CoinsTable = () => {
 			id: 'gemcoin',
 			symbol: 'gmc',
 			name: 'GEMCoin',
-			usd: currentPrice?.price,
+			usd: currentPrice?.price ? currentPrice?.price : 0.0,
 			change24h: 8.63,
 			change7d: 2.9,
-			current_price: currentPrice?.price,
+			current_price: currentPrice?.price ? currentPrice?.price : 0.0,
 			price_change_percentage_24h: 8.63,
 			market_cap: 543433096809,
 			image: GemLogo,

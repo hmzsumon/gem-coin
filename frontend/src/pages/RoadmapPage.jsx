@@ -1,12 +1,12 @@
 import React from 'react';
 import TemplateLayout from '../layouts/TemplateLayout';
-import Roadmap2 from '../components/Home/Roadmap2';
+import Roadmap from '../components/Home/Roadmap';
 
 const RoadmapPage = () => {
 	return (
 		<TemplateLayout>
 			<div>
-				<Roadmap2 />
+				<Roadmap />
 			</div>
 		</TemplateLayout>
 	);
