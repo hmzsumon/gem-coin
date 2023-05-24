@@ -3,16 +3,17 @@ import React from 'react';
 const data = [
 	{
 		id: 1,
-		title: 'August 2019 to 2023',
+		title: 'August 2019 to Jan 2023',
 		description: [
-			'Research & Policy-Making Launching Crypto Coin by forming a new team for People Oriented.  ',
+			'Research & Policy-Making Launching Crypto Coin by forming a new team for People Oriented. ',
+			'GEMCOIN Team readyto Action GEMCOIN Generated.',
 		],
 	},
 	{
 		id: 2,
 		title: 'March 2023',
 		description: [
-			'GEMCOIN Media Chain formed a team, Generated Coin called GEMCOIN.',
+			'GEMCOIN MEDIA CHAIN formed a team, Generated Coin called GEMCOIN (GMC).',
 			'Website, Account Opening presale, Investment, mining and other plans are done here.',
 		],
 	},
@@ -20,57 +21,60 @@ const data = [
 		id: 3,
 		title: 'April 2023',
 		description: [
-			'GEMCOIN Prices Upgraded, Direct Wallet Connect GEMCOIN Swap Opening & Others Way Swap Ready. Listing CoinMarketCap, CoinGecko, MotherCoinMarket & Others Platform.',
+			'GEMCOIN (GMC) Prices Upgraded, Smart Contact program create. GMC BNB Smart Chain token &amp; Polygon token Generated. Direct Wallet Connect. Pancakaswap listing, GMC Swap Opening &amp; Others Way Swap Ready.',
 		],
 	},
 	{
 		id: 4,
 		title: 'May & June 2023 ',
 		description: [
-			'GEMCOIN Marketing. All social site & Google play store. Billboard, Banner, Video Clip etc.',
+			'GEMCOIN (GMC) Wallet Launching. GMC Marketing. All social site &amp; Google play store. Billboard, Banner, Video Clip etc.',
+			'Listing CoinMarketCap, CoinGecko, MotherCoinMarket &amp; Others listing Platform.',
 		],
 	},
 	{
 		id: 5,
 		title: 'July 2023',
 		description: [
-			'Support Mother Wallet & Mother Exchange Send Received coin & Mobile App. ',
+			'GEMCOIN (GMC) Support Mother Wallet &amp; Mother Exchange &amp; MotherCoinMarket Send Received Coin &amp; Mobile App. ',
+			'GEMCOIN (GMC) Support MotherNFT Marketplace. MEDIA NFTs Launching.',
 		],
 	},
 	{
 		id: 6,
 		title: 'August 2023',
 		description: [
-			'GEMCOIN Wallet Marketing, Announcement Free Airdrop & Giveaways Distribution. ',
+			'GEMCOIN (GMC) Wallet Marketing, Announcement Free Airdrop &amp; Giveaways Distribution.',
 		],
 	},
 	{
 		id: 7,
 		title: 'September 2023',
 		description: [
-			' GEMCOIN Face to Face Buy Sell and Withdraw any Currency & Cryptocurrencys Exchange. ',
+			' GMC Face to Face Buy Sell and Withdraw any Currency &amp; Cryptocurrencys Exchange. C2C Platform. Direct Clint to Counter Base.',
 		],
 	},
 	{
 		id: 8,
 		title: 'October 2023',
 		description: [
-			'GEMCOIN All Process Modified. All Business & Investor, GEMCOIN Holder 5 Director Selected & Joining GEMCOIN Head Office in Dubai. ',
+			'GEMCOIN (GMC) All Process Modified. All Business &amp; Investor, Cashback, FDR GMC Holder 5 Director Selected &amp;Joining Head Office in Dubai. ',
 		],
 	},
 	{
 		id: 9,
 		title: 'November 2023',
 		description: [
-			'GEMCoin Partner, Merchant Buyer, Sole Agent, Distributor, Marketing, Meeting & Price Distribution in Dubai Invitation  ',
+			'GMC Partner, Merchant Buyer, Sole Agent, Distributor, Marketing, Meeting &amp; Price Distribution in Dubai Invitation.',
+			'GMC Others Platform getup Ready in License &amp; Others.',
 		],
 	},
 	{
 		id: 10,
 		title: 'December 2023',
 		description: [
-			'Exchange Listing Mother, Binance, KuCoin, MEXC and World top 10 Exchange. ',
-			'Our Target is 3 million  users. GemCoin will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
+			'GEMCOIN (GMC) Exchange Listing Mother, Binance, KuCoin, MEXC &amp; World top 10 Exchange. ',
+			'Our Target is 3 Million Mining Users. GMC Will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
 		],
 	},
 ];
@@ -107,7 +111,11 @@ const Roadmap = () => {
 								<h3 className='text-lg font-semibold text-gray-800'>
 									{item.title}
 								</h3>
-								<p className='mt-1 text-sm text-gray-800'>{item.description}</p>
+								<div className='mt-1 text-sm text-gray-800'>
+									{item.description.map((item) => (
+										<li>{item}</li>
+									))}
+								</div>
 							</div>
 						</div>
 					</div>
