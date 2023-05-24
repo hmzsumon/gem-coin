@@ -83,8 +83,8 @@ const FooterTop = () => {
 				<div className='px-4 '>
 					<h2 className='text-[#F1A619]'>CONTACT</h2>
 					<p>
-						GEM MEDIA CHAIN (GMC)
-						<br /> GEMCoin Building No-2, Dubai Digital Park, Dubai, UAE <br />
+						GEMCOIN MEDIA CHAIN (GMC)
+						<br /> Dubai Digital Park, Dubai, UAE <br />
 					</p>
 					<div className='flex space-x-2 '>
 						<div>

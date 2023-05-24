@@ -1,6 +1,6 @@
 import React from 'react';
 import SideNave from '../SideNave';
-import logo from '../../../../assets/images/logo-blue.png';
+import logo from '../../../../assets/images/newe_logo_gem.png';
 import { BsBellFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 

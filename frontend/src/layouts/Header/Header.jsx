@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useState } from 'react';
-import Logo from '../../assets/images/logo-blue.png';
+import Logo from '../../assets/images/newe_logo_gem.png';
 import LogoWhait from '../../assets/images/logo-white.png';
 import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -37,11 +37,7 @@ const navItems = [
 		title: 'Whitepaper',
 		path: '/white-paper',
 	},
-	// {
-	// 	id: 7,
-	// 	title: 'Distribution',
-	// 	path: '/coming',
-	// },
+
 	{
 		id: 8,
 		title: 'Wallet',
@@ -50,17 +46,17 @@ const navItems = [
 	{
 		id: 9,
 		title: 'Exchange',
-		path: '/coming',
-	},
-	{
-		id: 10,
-		title: 'Contact',
-		path: '/coming',
+		path: '/exchange',
 	},
 	{
 		id: 11,
-		title: 'Team',
-		path: '/coming',
+		title: 'Offer & Earn',
+		path: '/',
+	},
+	{
+		id: 7,
+		title: 'Contact Us',
+		path: '/contact-us',
 	},
 ];
 

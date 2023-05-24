@@ -7,14 +7,12 @@ const {
 	sendMe,
 	sendVerificationEmail,
 } = require('../utils/sendEmail');
+const Mining = require('../models/miningModel');
 const crypto = require('crypto');
 const cloudinary = require('cloudinary');
-const nodeMailer = require('nodemailer');
 const PxcPrice = require('./../models/pxc_price');
-const Withdraw = require('../models/withdraw');
 const createTransaction = require('../utils/tnx');
 const { v4: uuidv4 } = require('uuid');
-const Usdx = require('../models/usdxModel');
 
 // send verification email
 exports.sendVerificationEmail = catchAsyncErrors(async (req, res, next) => {
@@ -297,6 +295,21 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 // Get User Detail
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
 	const user = await User.findById(req.user.id);
+	if (!user) {
+		return next(new ErrorHander('User not found', 404));
+	}
+	// get mining by mining_user
+	const mining = await Mining.findOne({ mining_user: req.user.id });
+	if (!mining) {
+		return next(new ErrorHander('User not found', 404));
+	}
+
+	// update user mining_balance
+	if (user.mining_balance !== mining.mining_profit) {
+		user.mining_balance = mining.mining_profit;
+		await user.save();
+	}
+
 	res.status(200).json({
 		success: true,
 		user,

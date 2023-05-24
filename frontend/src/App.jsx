@@ -40,6 +40,8 @@ import Fdr from './components/User/FDR/Fdr';
 import Nft from './components/User/NFT/Nft';
 import CashBack from './components/User/CashBack/CashBack';
 import Settings from './components/User/Settings/Settings';
+import Exchange from './pages/Exchange';
+import Contact from './pages/Contact';
 
 const App = () => {
 	return (
@@ -54,6 +56,8 @@ const App = () => {
 				<Route path='/signup' element={<Signup />} />
 				<Route path='/coming' element={<ComingPage />} />
 				<Route path='/white-paper' element={<WhitePaper />} />
+				<Route path='/exchange' element={<Exchange />} />
+				<Route path='/contact-us' element={<Contact />} />
 
 				<Route path='/email-verify' element={<EmailVerification />} />
 				<Route path='/forgot-password' element={<ForgotPassword />} />

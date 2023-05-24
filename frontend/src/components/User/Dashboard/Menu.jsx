@@ -1,58 +1,80 @@
 import React from 'react';
-import { BsFillGiftFill } from 'react-icons/bs';
-import { SiConvertio } from 'react-icons/si';
-import { RiCoinsLine } from 'react-icons/ri';
-import { FaQuestionCircle, FaCoins, FaHandHoldingUsd } from 'react-icons/fa';
-import { FcOnlineSupport } from 'react-icons/fc';
-import { HiAcademicCap } from 'react-icons/hi';
+
 import { Link } from 'react-router-dom';
-import { useLoadUserQuery } from '../../../features/auth/authApi';
 
-const Menu = () => {
-	const { data, isLoading } = useLoadUserQuery();
-	const { user } = data || {};
-
+const Menu = ({ user }) => {
 	const menuItems = [
-		{ id: 1, name: 'USDT', link: '/wallets', value: `$${user?.balance}` },
+		{
+			id: 1,
+			name: 'USDT',
+			link: '/wallets',
+			value: `$${
+				user?.usdt_balance
+					? Number(user?.usdt_balance).toFixed(2)
+					: Number(0).toFixed(2)
+			}`,
+		},
 		{
 			id: 3,
 			name: 'Gemcoin',
 			link: '/wallets',
-			value: Number(user?.gem_coin).toFixed(0),
+			value: user?.gem_coin
+				? Number(user?.gem_coin).toFixed(8)
+				: Number(0).toFixed(8),
 		},
 		{
 			id: 6,
 			name: 'Withdraw',
-			link: '/create-withdraw',
-			value: `$${user?.withdrawal_balance}`,
+			link: '/dashboard',
+			value: `$${
+				user?.withdrawal_balance
+					? Number(user?.withdrawal_balance).toFixed(2)
+					: Number(0).toFixed(2)
+			}`,
 		},
 		{
 			id: 2,
 			name: 'Bonus',
-			link: '/coming-sone',
-			value: `$${user?.sinUp_bonus}`,
+			link: '/dashboard',
+			value: `$${
+				user?.bonus_balance
+					? Number(user?.bonus_balance).toFixed(2)
+					: Number(0).toFixed(2)
+			}`,
 		},
-		{ id: 2, name: 'Mining', link: '/coming-sone', value: '0.00' },
-		{ id: 2, name: 'Cash Back', link: '/coming-sone', value: '0.00' },
-		{ id: 2, name: 'Swap', link: '/coming-sone' },
+		{
+			id: 2,
+			name: 'Mining',
+			link: '/dashboard',
+			value: `$${
+				user?.mining_balance
+					? Number(user?.mining_balance).toFixed(8)
+					: Number(0).toFixed(8)
+			}`,
+		},
+		{ id: 2, name: 'Cash Back', link: '/dashboard', value: '0.00' },
+		{ id: 2, name: 'Swap', link: '/dashboard' },
 		{ id: 4, name: 'Send', link: '/send' },
 		{ id: 5, name: 'Receive', link: '/receive' },
 	];
+
 	return (
-		<div className='rounded-md '>
-			<div className='grid grid-cols-3 gap-6 p-2 '>
-				{menuItems.map((item) => (
-					<Link to={item.link} key={item.id}>
-						<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-[#9BD36A] hover:bg-slate-700'>
-							<span c className='text-sm font-bold text-slate-800 '>
-								{item.name}
-							</span>
-							<span className='text-xs text-blue-700'>{item.value}</span>
-						</li>
-					</Link>
-				))}
+		<>
+			<div className='rounded-md '>
+				<div className='grid grid-cols-3 gap-6 p-2 '>
+					{menuItems.map((item) => (
+						<Link to={item.link} key={item.id}>
+							<li className='flex flex-col items-center py-4 space-y-2 text-white uppercase rounded-md cursor-pointer bg-[#9BD36A] hover:bg-slate-700'>
+								<span c className='text-sm font-bold text-slate-800 '>
+									{item.name}
+								</span>
+								<span className='text-xs text-blue-700'>{item.value}</span>
+							</li>
+						</Link>
+					))}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

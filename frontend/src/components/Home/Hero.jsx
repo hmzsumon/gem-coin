@@ -61,9 +61,12 @@ const Hero = () => {
 								GET STARTED
 							</button>
 						</Link>
-						<button className='bg-white text-slate-900 px-6 md:px-10 py-3 rounded-sm font-bold tracking-[.09rem] hover:bg-[#F9A826] hover:shadow-lg hover:text-white transition duration-300 ease-in-out '>
+						<Link
+							to='/contact-us'
+							className='bg-white text-slate-900 px-6 md:px-10 py-3 rounded-sm font-bold tracking-[.09rem] hover:bg-[#F9A826] hover:shadow-lg hover:text-white transition duration-300 ease-in-out '
+						>
 							CONTACT US
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>

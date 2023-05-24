@@ -69,6 +69,7 @@ const userSchema = new mongoose.Schema(
 			trim: true,
 		},
 
+		// balance options
 		balance: {
 			type: Number,
 			default: 0,
@@ -78,6 +79,10 @@ const userSchema = new mongoose.Schema(
 			default: 0,
 		},
 		withdrawal_balance: {
+			type: Number,
+			default: 0,
+		},
+		mining_balance: {
 			type: Number,
 			default: 0,
 		},

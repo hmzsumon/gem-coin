@@ -11,7 +11,8 @@ const MiningStatus = () => {
 				<div className='flex items-center space-x-2'>
 					<div>
 						<p className='m-0 text-xl font-semibold text-gray-100 '>
-							GEMCOIN <br /> <span className='text-xs '>GMC</span>
+							GEMCOIN (GMC) <br />{' '}
+							<span className='text-xs '>Daily Mining Reward</span>
 						</p>
 					</div>
 				</div>
