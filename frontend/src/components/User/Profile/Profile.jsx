@@ -216,15 +216,22 @@ const Profile = () => {
 
 								<hr className='my-2 border-slate-700' />
 							</div>
-							{!user?.address?.is_full ||
-								(edit && (
-									<button
-										className='w-full py-2 mt-4 text-sm font-bold text-white uppercase bg-blue-500 rounded focus:outline-none hover:bg-blue-600 hover:shadow-none'
-										onClick={handleSubmit}
-									>
-										Submit
-									</button>
-								))}
+							{!user?.address?.is_full && !edit && (
+								<button
+									className='w-full py-2 mt-4 text-sm font-bold text-white uppercase bg-blue-500 rounded focus:outline-none hover:bg-blue-600 hover:shadow-none'
+									onClick={handleSubmit}
+								>
+									Submit
+								</button>
+							)}
+							{edit && (
+								<button
+									className='w-full py-2 mt-4 text-sm font-bold text-white uppercase bg-blue-500 rounded focus:outline-none hover:bg-blue-600 hover:shadow-none'
+									onClick={handleSubmit}
+								>
+									Submit
+								</button>
+							)}
 						</div>
 					</div>
 				</div>
