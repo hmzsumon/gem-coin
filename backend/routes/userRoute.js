@@ -29,6 +29,7 @@ const {
 	verifyEmail,
 	resendEmailVerificationCode,
 	updateAllUsersActiveStatus,
+	updateAddress,
 } = require('../controllers/userController');
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 const User = require('../models/userModel');
@@ -50,7 +51,7 @@ router.route('/logout').put(logout);
 
 router.route('/load-user').get(isAuthenticatedUser, getUserDetails);
 
-router.route('/password/update').put(isAuthenticatedUser, updatePassword);
+// router.route('/password/update').put(isAuthenticatedUser, updatePassword);
 
 router.route('/me/update').put(isAuthenticatedUser, updateProfile);
 
@@ -114,5 +115,15 @@ router.route('/update-all-users-balance').put(updateAllUsersBalance2);
 
 // update all users active status
 router.route('/update-all-users-active-status').put(updateAllUsersActiveStatus);
+
+// update address
+router
+	.route('/update-address')
+	.put(upload.none(), isAuthenticatedUser, updateAddress);
+
+// update user password
+router
+	.route('/password/update')
+	.put(upload.none(), isAuthenticatedUser, updatePassword);
 
 module.exports = router;

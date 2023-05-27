@@ -10,6 +10,7 @@ import Token from '../components/Home/Token';
 import Roadmap2 from '../components/Home/Roadmap2';
 import CoinsTable from '../components/Home/CoinsTable';
 import Roadmap from '../components/Home/Roadmap';
+import Carousel from '../components/User/Dashboard/Carousel';
 const HomePage = () => {
 	return (
 		<TemplateLayout>
@@ -21,6 +22,9 @@ const HomePage = () => {
 				<CoinsTable />
 				<Token />
 				<Everything />
+				<div className='px-4 py-4 '>
+					<Carousel />
+				</div>
 			</div>
 		</TemplateLayout>
 	);

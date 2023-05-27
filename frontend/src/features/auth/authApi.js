@@ -210,6 +210,16 @@ export const authApi = apiSlice.injectEndpoints({
 			}),
 			providesTags: ['Users', 'User'],
 		}),
+
+		// update address
+		updateAddress: builder.mutation({
+			query: (body) => ({
+				url: '/update-address',
+				method: 'PUT',
+				body,
+			}),
+			invalidatesTags: ['Users', 'User'],
+		}),
 	}),
 });
 
@@ -231,4 +241,5 @@ export const {
 	useGetMembersQuery,
 	useGetAllUsersQuery,
 	useGetSingleUserAdminQuery,
+	useUpdateAddressMutation,
 } = authApi;

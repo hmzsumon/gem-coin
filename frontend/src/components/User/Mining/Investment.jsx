@@ -10,6 +10,13 @@ import CircledSpinning from '../../../global/CircledSpinning';
 
 const packages = [
 	{
+		id: 6,
+		name: 'Basic',
+		price: '50',
+		spinning: <CircledSpinning />,
+		color: '#C77B30',
+	},
+	{
 		id: 1,
 		name: 'Bronze',
 		price: '100',

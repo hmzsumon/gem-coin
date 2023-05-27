@@ -42,6 +42,9 @@ import CashBack from './components/User/CashBack/CashBack';
 import Settings from './components/User/Settings/Settings';
 import Exchange from './pages/Exchange';
 import Contact from './pages/Contact';
+import OfferAndEarn from './pages/OfferAndEarn';
+import Profile from './components/User/Profile/Profile';
+import Security from './components/User/Security/Security';
 
 const App = () => {
 	return (
@@ -58,6 +61,7 @@ const App = () => {
 				<Route path='/white-paper' element={<WhitePaper />} />
 				<Route path='/exchange' element={<Exchange />} />
 				<Route path='/contact-us' element={<Contact />} />
+				<Route path='/offer-and-earn' element={<OfferAndEarn />} />
 
 				<Route path='/email-verify' element={<EmailVerification />} />
 				<Route path='/forgot-password' element={<ForgotPassword />} />
@@ -94,6 +98,8 @@ const App = () => {
 					<Route path='/nft' element={<Nft />} />
 					<Route path='/cashback' element={<CashBack />} />
 					<Route path='/settings' element={<Settings />} />
+					<Route path='/profile' element={<Profile />} />
+					<Route path='/security' element={<Security />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>

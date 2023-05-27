@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from './Layout/Layout';
 import Menu from './Menu';
+
 import PriceList from './PriceList';
 import { useGetPricesQuery } from '../../../features/prices/priceApi';
 import { useLoadUserQuery } from '../../../features/auth/authApi';

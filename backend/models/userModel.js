@@ -65,8 +65,29 @@ const userSchema = new mongoose.Schema(
 		},
 
 		address: {
-			type: String,
-			trim: true,
+			address_line1: {
+				type: String,
+			},
+			address_line2: {
+				type: String,
+			},
+			city: {
+				type: String,
+				trim: true,
+			},
+
+			state: {
+				type: String,
+				trim: true,
+			},
+			postcode: {
+				type: String,
+				trim: true,
+			},
+			is_full: {
+				type: Boolean,
+				default: false,
+			},
 		},
 
 		// balance options

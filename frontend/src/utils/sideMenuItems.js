@@ -38,37 +38,6 @@ const sideMenuItems = [
 	},
 
 	{
-		id: 5,
-		name: 'lotteries',
-		icon: <FiGift />,
-		path: '/admin/lotteries',
-	},
-
-	{
-		id: 12,
-		name: 'Minings',
-		icon: <GiMining />,
-		path: '/admin/minings',
-	},
-	{
-		id: 13,
-		name: 'Verifications',
-		icon: <MdOutlineVerifiedUser />,
-		path: '/admin/verifications',
-	},
-	{
-		id: 14,
-		name: 'Loans',
-		icon: <FaHandHoldingUsd />,
-		path: '/admin/loans',
-	},
-	{
-		id: 15,
-		name: 'Merchant',
-		icon: <SiMagento />,
-		path: '/admin/merchants',
-	},
-	{
 		id: 16,
 		name: 'Prices',
 		icon: <GiPriceTag />,
@@ -76,9 +45,9 @@ const sideMenuItems = [
 	},
 	{
 		id: 17,
-		name: 'Notice',
-		icon: <AiOutlineNotification />,
-		path: '/admin/notice',
+		name: 'Offer And Earn',
+		icon: <FaHandHoldingUsd />,
+		path: '/admin/offer-and-earn',
 	},
 
 	//   {

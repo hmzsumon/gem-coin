@@ -9,13 +9,19 @@ const Settings = () => {
 			<div className='h-screen'>
 				<div className='flex items-center justify-center w-11/12 h-[60%] mx-auto p-2 md:w-1/2 rounded bg-slate-800 mt-10'>
 					<div className='grid gap-4 md:grid-cols-2'>
-						<button className='flex px-2 py-1 text-center text-white bg-green-500 '>
+						<NavLink
+							to='/profile'
+							className='flex px-2 py-1 text-center text-white bg-green-500 '
+						>
 							Profile Settings
-						</button>
+						</NavLink>
 
-						<button className='flex px-2 py-1 text-center text-white bg-orange-500'>
+						<NavLink
+							to='/security'
+							className='flex px-2 py-1 text-center text-white bg-orange-500'
+						>
 							Security Settings
-						</button>
+						</NavLink>
 					</div>
 				</div>
 			</div>

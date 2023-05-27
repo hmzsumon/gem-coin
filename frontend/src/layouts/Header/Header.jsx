@@ -51,7 +51,7 @@ const navItems = [
 	{
 		id: 11,
 		title: 'Offer & Earn',
-		path: '/',
+		path: '/offer-and-earn',
 	},
 	{
 		id: 7,
