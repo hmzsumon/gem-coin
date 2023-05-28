@@ -748,7 +748,7 @@ exports.updateAllUsersActiveStatus = catchAsyncErrors(
 
 // update address
 exports.updateAddress = catchAsyncErrors(async (req, res, next) => {
-	const { address, city, state, zip } = req.body;
+	const { address, city, state, zip, facebook, telegram, youtube } = req.body;
 	if (!address || !city || !state || !zip) {
 		return next(new ErrorHander('Please enter all fields', 400));
 	}
@@ -761,6 +761,9 @@ exports.updateAddress = catchAsyncErrors(async (req, res, next) => {
 	user.address.state = state;
 	user.address.postcode = zip;
 	user.address.is_full = true;
+	user.facebook = facebook;
+	user.telegram = telegram;
+	user.youtube = youtube;
 	await user.save();
 
 	res.status(200).json({

@@ -18,13 +18,16 @@ const Profile = () => {
 	const [state, setState] = useState('');
 	const [city, setCity] = useState('');
 	const [zip, setZip] = useState('');
+	const [facebook, setFacebook] = useState('');
+	const [telegram, setTelegram] = useState('');
+	const [youtube, setYoutube] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!address || !state || !city || !zip) {
 			return toast.error('Please fill all the fields');
 		}
-		updateAddress({ address, state, city, zip });
+		updateAddress({ address, state, city, zip, facebook, telegram, youtube });
 	};
 
 	// check if edit
@@ -34,6 +37,9 @@ const Profile = () => {
 			setState(user?.address?.state);
 			setCity(user?.address?.city);
 			setZip(user?.address?.postcode);
+			setFacebook(user?.facebook);
+			setTelegram(user?.telegram);
+			setYoutube(user?.youtube);
 		}
 	}, [edit, user]);
 
@@ -115,7 +121,6 @@ const Profile = () => {
 											{user?.country ? user?.country : 'Not Provided by User'}
 										</li>
 									</div>
-
 									<div className='grid grid-cols-2 list-none '>
 										<li className='grid grid-cols-2 '>
 											<span>Address</span>
@@ -140,7 +145,6 @@ const Profile = () => {
 											)}
 										</li>
 									</div>
-
 									<div className='grid grid-cols-2 list-none '>
 										<li className='grid grid-cols-2 '>
 											<span>State</span>
@@ -212,6 +216,81 @@ const Profile = () => {
 											)}
 										</li>
 									</div>
+									{/* facebook */}
+									<div className='grid grid-cols-2 list-none '>
+										<li className='grid grid-cols-2 '>
+											<span>Facebook Link</span>
+											<span>:</span>
+										</li>
+										<li>
+											{user?.facebook && !edit ? (
+												user?.facebook
+											) : (
+												<>
+													<div>
+														<input
+															type='text'
+															className='w-full px-2 py-1 text-sm font-semibold text-gray-100 bg-transparent border rounded-md focus:outline-none'
+															placeholder='Facebook Link'
+															value={facebook}
+															onChange={(e) => setFacebook(e.target.value)}
+														/>
+													</div>
+												</>
+											)}
+										</li>
+									</div>
+									{/* End facebook */}
+									{/* telegram */}
+									<div className='grid grid-cols-2 list-none '>
+										<li className='grid grid-cols-2 '>
+											<span>Telegram Link</span>
+											<span>:</span>
+										</li>
+										<li>
+											{user?.telegram && !edit ? (
+												user?.telegram
+											) : (
+												<>
+													<div>
+														<input
+															type='text'
+															className='w-full px-2 py-1 text-sm font-semibold text-gray-100 bg-transparent border rounded-md focus:outline-none'
+															placeholder='Telegram Link'
+															value={telegram}
+															onChange={(e) => setTelegram(e.target.value)}
+														/>
+													</div>
+												</>
+											)}
+										</li>
+									</div>
+									{/* End telegram */}
+									{/* Youtube*/}
+									<div className='grid grid-cols-2 list-none '>
+										<li className='grid grid-cols-2 '>
+											<span>Youtube Link</span>
+											<span>:</span>
+										</li>
+										<li>
+											{user?.youtube && !edit ? (
+												user?.youtube
+											) : (
+												<>
+													<div>
+														<input
+															type='text'
+															className='w-full px-2 py-1 text-sm font-semibold text-gray-100 bg-transparent border rounded-md focus:outline-none'
+															placeholder='Youtube Link'
+															value={youtube}
+															onChange={(e) => setYoutube(e.target.value)}
+														/>
+													</div>
+												</>
+											)}
+										</li>
+									</div>
+									s{/* End Youtube*/}
 								</div>
 
 								<hr className='my-2 border-slate-700' />

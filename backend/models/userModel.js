@@ -196,6 +196,22 @@ const userSchema = new mongoose.Schema(
 			type: String,
 		},
 
+		// social links
+		facebook: {
+			type: String,
+			trim: true,
+		},
+
+		youtube: {
+			type: String,
+			trim: true,
+		},
+
+		telegram: {
+			type: String,
+			trim: true,
+		},
+
 		resetPasswordToken: String,
 		resetPasswordExpire: Date,
 	},

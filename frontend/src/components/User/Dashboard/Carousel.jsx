@@ -2,10 +2,10 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-import Img5 from '../../../assets/banner/banner9.jpg';
-import Img6 from '../../../assets/banner/banner9.jpg';
-import Img7 from '../../../assets/banner/banner9.jpg';
-import Img8 from '../../../assets/banner/banner9.jpg';
+import Img5 from '../../../assets/banner/banner1.jpg';
+import Img6 from '../../../assets/banner/banner2.jpg';
+import Img7 from '../../../assets/banner/banner3.jpg';
+import Img8 from '../../../assets/banner/banner4.jpg';
 
 const images = [Img5, Img6, Img7, Img8];
 
