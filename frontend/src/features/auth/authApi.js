@@ -202,15 +202,6 @@ export const authApi = apiSlice.injectEndpoints({
 			providesTags: ['Users', 'User'],
 		}),
 
-		// get single user by id
-		getSingleUserAdmin: builder.query({
-			query: (id) => ({
-				url: `/single-user-admin/${id}`,
-				method: 'GET',
-			}),
-			providesTags: ['Users', 'User'],
-		}),
-
 		// update address
 		updateAddress: builder.mutation({
 			query: (body) => ({
@@ -240,6 +231,6 @@ export const {
 	useSendMoneyMutation,
 	useGetMembersQuery,
 	useGetAllUsersQuery,
-	useGetSingleUserAdminQuery,
+
 	useUpdateAddressMutation,
 } = authApi;

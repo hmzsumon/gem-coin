@@ -9,11 +9,16 @@ export const adminApi = apiSlice.injectEndpoints({
 		}),
 
 		// get all users
-		getAllUsers: builder.query({
-			query: () => '/admin/users',
+		allUsers: builder.query({
+			query: () => '/users',
 			providesTags: ['Users'],
 		}),
 
+		// get single user by id
+		getSingleUserAdmin: builder.query({
+			query: (id) => `/admin/user/${id}`,
+			providesTags: ['Users'],
+		}),
 		// delete user
 		deleteUser: builder.mutation({
 			query: (id) => ({
@@ -43,6 +48,7 @@ export const adminApi = apiSlice.injectEndpoints({
 
 export const {
 	useGetCompanyAdminQuery,
-	useGetAllUsersQuery,
+	useAllUsersQuery,
+	useGetSingleUserAdminQuery,
 	useCreatePriceMutation,
 } = adminApi;

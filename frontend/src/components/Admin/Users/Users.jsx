@@ -7,10 +7,10 @@ import { formatDate } from '../../../utils/functions';
 import { DataGrid } from '@mui/x-data-grid';
 
 import Actions from './Actions';
-import { useGetAllUsersQuery } from '../../../features/admin/adminApi';
+import { useAllUsersQuery } from '../../../features/admin/adminApi';
 
 const Users = () => {
-	const { data, isLoading } = useGetAllUsersQuery();
+	const { data, isLoading } = useAllUsersQuery();
 	const { users } = data || [];
 
 	// handle delete user
@@ -129,7 +129,7 @@ const Users = () => {
 			return rows.unshift({
 				id: user._id,
 				name: user.name,
-				phone: user.phone_number,
+				phone: user.phone,
 				email: user.email,
 				emailVerified: user.email_verified,
 				join_date: formatDate(user.createdAt),

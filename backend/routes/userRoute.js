@@ -62,7 +62,7 @@ router.route('/balance/update').put(updateAllUsersBalance);
 router.route('/pxc-id').get(getUserByPxcId);
 
 router
-	.route('/admin/users')
+	.route('/users')
 	.get(isAuthenticatedUser, authorizeRoles('admin'), getAllUser);
 
 router

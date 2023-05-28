@@ -45,6 +45,9 @@ import Contact from './pages/Contact';
 import OfferAndEarn from './pages/OfferAndEarn';
 import Profile from './components/User/Profile/Profile';
 import Security from './components/User/Security/Security';
+import WithdrawList from './components/User/Withdraw/WithdrawList';
+import Users from './components/Admin/Users/Users';
+import EditUser from './components/Admin/Users/EditUser';
 
 const App = () => {
 	return (
@@ -74,6 +77,9 @@ const App = () => {
 
 					<Route path='/admin/deposits' element={<DepositList />} />
 					<Route path='/admin/deposit/edit/:id' element={<EditDeposit />} />
+
+					<Route path='/admin/users' element={<Users />} />
+					<Route path='/admin/user/edit/:id' element={<EditUser />} />
 				</Route>
 
 				{/* User Route */}
@@ -100,6 +106,7 @@ const App = () => {
 					<Route path='/settings' element={<Settings />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/security' element={<Security />} />
+					<Route path='/withdraws' element={<WithdrawList />} />
 				</Route>
 
 				<Route path='*' element={<NotFound />}></Route>

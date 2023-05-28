@@ -25,8 +25,8 @@ const Menu = ({ isLoading }) => {
 		},
 		{
 			id: 6,
-			name: 'Withdraw',
-			link: '/dashboard',
+			name: 'Withdraws',
+			link: '/withdraws',
 			value: `$${
 				user?.withdrawal_balance
 					? Number(user?.withdrawal_balance).toFixed(2)
