@@ -118,6 +118,7 @@ exports.newWithdrawRequest = catchAsyncErrors(async (req, res, next) => {
 		wallet,
 		address,
 		last_price: lastPrice,
+		charge: 0,
 	});
 
 	// update user balance
@@ -198,6 +199,28 @@ exports.getAllWithdrawRequest = catchAsyncErrors(async (req, res, next) => {
 	});
 });
 
+//get single withdraw request
+exports.getSingleWithdrawRequest = catchAsyncErrors(async (req, res, next) => {
+	const withdraw = await Withdraw.findById(req.params.id);
+	if (!withdraw) {
+		return next(new ErrorHander('Withdraw not found', 404));
+	}
+
+	//find withdraw details
+	const withdrawDetails = await WithdrawDetails.findOne({
+		user_id: withdraw.user_id,
+	});
+	if (!withdrawDetails) {
+		return next(new ErrorHander('Withdraw details not found', 404));
+	}
+
+	res.status(200).json({
+		success: true,
+		withdraw,
+		withdrawDetails,
+	});
+});
+
 // update withdraw request
 exports.updateWithdrawRequest = catchAsyncErrors(async (req, res, next) => {
 	const withdraw = await Withdraw.findById(req.params.id);
@@ -225,13 +248,35 @@ exports.updateWithdrawRequest = catchAsyncErrors(async (req, res, next) => {
 // approve pending withdraw request
 exports.approvePendingWithdrawRequest = catchAsyncErrors(
 	async (req, res, next) => {
-		const withdraw = await Withdraw.findById(req.params.id);
+		const { id, cryptoName, cryptoAddress, cryptoTnxId } = req.body;
+		console.log(id, cryptoName, cryptoAddress, cryptoTnxId);
+		const withdraw = await Withdraw.findById(id);
 		if (!withdraw) {
 			return next(new ErrorHander('Withdraw not found', 404));
 		}
 
+		//find withdraw details
+		const withdrawDetails = await WithdrawDetails.findOne({
+			user_id: withdraw.user_id,
+		});
+		if (!withdrawDetails) {
+			return next(new ErrorHander('Withdraw details not found', 404));
+		}
+
+		//update withdraw details
 		withdraw.status = 'approved';
+		withdraw.approved_at = Date.now();
+		withdraw.is_approved = true;
+		withdraw.approved_wallet = cryptoName;
+		withdraw.approved_wallet_address = cryptoAddress;
+		withdraw.approved_tnx_id = cryptoTnxId;
 		await withdraw.save();
+
+		// update withdraw details
+		withdrawDetails.total_withdraw += withdraw.amount;
+		withdrawDetails.last_withdraw_amount = withdraw.amount;
+		withdrawDetails.last_withdraw_date = Date.now();
+		await withdrawDetails.save();
 
 		res.status(200).json({
 			success: true,
@@ -243,38 +288,54 @@ exports.approvePendingWithdrawRequest = catchAsyncErrors(
 // cancel pending withdraw request
 exports.cancelPendingWithdrawRequest = catchAsyncErrors(
 	async (req, res, next) => {
-		const withdraw = await Withdraw.findById(req.params.id);
+		const { id, reason } = req.body;
 
+		const withdraw = await Withdraw.findById(id);
 		if (!withdraw) {
 			return next(new ErrorHander('Withdraw not found', 404));
 		}
 		if (withdraw.status === 'cancelled') {
 			return next(new ErrorHander('Withdraw already cancelled', 400));
 		}
-		withdraw.status = 'cancelled';
-		await withdraw.save();
 
 		const user = await User.findOne({ _id: withdraw.user_id });
 		if (!user) {
 			return next(new ErrorHander('User not found', 404));
 		}
 
-		// find mining
-		const mining = await Mining.findOne({ mining_user: user._id });
-		if (!mining) {
-			return next(new ErrorHander('Mining not found', 404));
+		////find withdraw details
+		const withdrawDetails = await WithdrawDetails.findOne({
+			user_id: withdraw.user_id,
+		});
+		if (!withdrawDetails) {
+			return next(new ErrorHander('Withdraw details not found', 404));
 		}
 
-		let { amount, charge } = withdraw;
-		mining.mining_profit += amount + charge;
+		//update withdraw
+		withdraw.status = 'cancelled';
+		withdraw.is_cancelled = true;
+		withdraw.cancelled_reason = reason;
+		withdraw.cancelled_at = Date.now();
+		await withdraw.save();
+
+		const coin = withdraw.amount / withdraw.last_price;
+		// update user balance
+		user.gem_coin = user.gem_coin + coin;
+		user.balance = user.balance + withdraw.amount;
+		await user.save();
 		createTransaction(
 			user._id,
 			'cashIn',
-			amount,
+			withdraw.amount,
 			'withdraw',
 			'Withdraw Cancel'
 		);
-		await mining.save({ validateBeforeSave: false });
+
+		// update withdraw details
+		withdrawDetails.total_cancel_withdraw += withdraw.amount;
+		withdrawDetails.last_cancel_withdraw_amount = withdraw.amount;
+		withdrawDetails.last_cancel_withdraw_amount = withdraw.amount;
+		await withdrawDetails.save();
 
 		res.status(200).json({
 			success: true,

@@ -1,27 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import DashboardLayout from '../layouts/DashboardLayout';
-
+import { toast } from 'react-toastify';
 import FadeLoader from 'react-spinners/FadeLoader';
-
 import { formatDate } from '../../../utils/functions';
 import { DataGrid } from '@mui/x-data-grid';
-
 import Actions from './Actions';
-import { useAllUsersQuery } from '../../../features/admin/adminApi';
+import {
+	useAllUsersQuery,
+	useDeleteUserMutation,
+} from '../../../features/admin/adminApi';
 
 const Users = () => {
 	const { data, isLoading } = useAllUsersQuery();
 	const { users } = data || [];
+	const [deleteUser, { isSuccess, isLoading: dLoading, isError, error }] =
+		useDeleteUserMutation();
 
 	// handle delete user
-	const handleDelete = () => {
-		console.log('delete');
+	const handleDelete = (id) => {
+		deleteUser(id);
 	};
 
 	// handle cancel withdraw
 	const cancelWithdraw = () => {
 		console.log('cancel');
 	};
+
+	useEffect(() => {
+		if (isSuccess) {
+			toast.success('User deleted successfully');
+		}
+		if (isError) {
+			toast.error(error.data.message);
+		}
+	}, [isSuccess, isError, error]);
 
 	const columns = [
 		{

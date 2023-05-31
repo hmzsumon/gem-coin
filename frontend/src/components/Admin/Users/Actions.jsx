@@ -73,7 +73,6 @@ const Actions = ({
 					name='delete'
 					onClick={() => handleChangeAction('delete')}
 					className='p-1 text-red-600 bg-red-100 rounded-full disabled:cursor-not-allowed hover:bg-red-200'
-					disabled
 				>
 					<DeleteIcon />
 				</button>

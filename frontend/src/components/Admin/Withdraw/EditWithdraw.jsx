@@ -41,12 +41,7 @@ const EditWithdraw = () => {
 					{withdraw?.status === 'cancelled' && (
 						<CancelDetails withdraw={withdraw} />
 					)}
-					{withdraw?.status === 'pending' && (
-						<>
-							{method === 'crypto' && <EditWithCrypto id={id} />}
-							{method === 'bank' && <EditWithBank id={id} />}
-						</>
-					)}
+					{withdraw?.status === 'pending' && <EditWithCrypto id={id} />}
 				</div>
 			)}
 		</DashboardLayout>

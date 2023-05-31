@@ -8,6 +8,7 @@ const {
 	approvePendingWithdrawRequest,
 	cancelPendingWithdrawRequest,
 	newWithdrawRequest,
+	getSingleWithdrawRequest,
 } = require('../controllers/withdrawController');
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth');
 const upload = multer({});
@@ -16,6 +17,9 @@ const router = express.Router();
 
 // with balance
 router.route('/withdraw').post(isAuthenticatedUser, withdraw);
+
+// get single withdraw request
+router.route('/withdraw/:id').get(getSingleWithdrawRequest);
 
 // update single user with balance
 router.route('/withdraw-update/:id').put(updateSingleUserWithBalance);
@@ -30,7 +34,7 @@ router
 
 // approved pending withdraws
 router
-	.route('/withdraws/approved/:id')
+	.route('/withdraw/approve')
 	.put(
 		isAuthenticatedUser,
 		authorizeRoles('admin'),
@@ -39,7 +43,7 @@ router
 
 // cancel pending withdraws
 router
-	.route('/withdraws/cancel/:id')
+	.route('/withdraw/cancel')
 	.put(isAuthenticatedUser, cancelPendingWithdrawRequest);
 
 // create new withdraw request

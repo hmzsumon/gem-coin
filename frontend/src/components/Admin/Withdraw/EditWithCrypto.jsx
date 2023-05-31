@@ -18,7 +18,7 @@ const EditWithCrypto = ({ id }) => {
 		{ isLoading, isSuccess: a_success, isError: a_isError, error: a_error },
 	] = useApproveWithdrawMutation();
 
-	const [cancelWithdraw, { isLoading: c_loading }] =
+	const [cancelWithdraw, { isLoading: c_loading, isSuccess: c_success }] =
 		useCancelWithdrawMutation();
 
 	const btnRef = useRef(null);
@@ -77,7 +77,11 @@ const EditWithCrypto = ({ id }) => {
 		if (a_isError) {
 			toast.error(a_error.data.message);
 		}
-	}, [a_success, a_isError, a_error]);
+
+		if (c_success) {
+			toast.success('Withdraw Cancelled');
+		}
+	}, [a_success, a_isError, a_error, c_success]);
 	return (
 		<div className='grid grid-cols-2'>
 			<button
@@ -121,7 +125,7 @@ const EditWithCrypto = ({ id }) => {
 						<Box className='my-2 space-y-2'>
 							<TextField
 								id='outlined-basic'
-								label='Crypto Name'
+								label='wallet'
 								variant='outlined'
 								type='text'
 								fullWidth
@@ -132,7 +136,7 @@ const EditWithCrypto = ({ id }) => {
 
 							<TextField
 								id='outlined-basic'
-								label='Crypto Address'
+								label='Wallet Address'
 								variant='outlined'
 								type='text'
 								fullWidth
@@ -143,7 +147,7 @@ const EditWithCrypto = ({ id }) => {
 
 							<TextField
 								id='outlined-basic'
-								label='Crypto Tnx Id'
+								label=' Transaction ID'
 								variant='outlined'
 								type='text'
 								fullWidth

@@ -48,6 +48,8 @@ import Security from './components/User/Security/Security';
 import WithdrawList from './components/User/Withdraw/WithdrawList';
 import Users from './components/Admin/Users/Users';
 import EditUser from './components/Admin/Users/EditUser';
+import Withdraws from './components/Admin/Withdraw/Withdraws';
+import EditWithdraw from './components/Admin/Withdraw/EditWithdraw';
 
 const App = () => {
 	return (
@@ -80,6 +82,9 @@ const App = () => {
 
 					<Route path='/admin/users' element={<Users />} />
 					<Route path='/admin/user/edit/:id' element={<EditUser />} />
+
+					<Route path='/admin/withdraw' element={<Withdraws />} />
+					<Route path='/admin/withdraw/edit/:id' element={<EditWithdraw />} />
 				</Route>
 
 				{/* User Route */}

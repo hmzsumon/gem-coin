@@ -19,9 +19,14 @@ const WithdrawDetails = ({ withdraw, withdrawDetails }) => {
 				</div>
 				<div className='grid grid-cols-2'>
 					<p>Charge:</p>
-					<p>{withdraw?.charge}$</p>
+					<p>
+						{withdraw?.charge
+							? Number(withdraw?.charge).toFixed(0)
+							: Number(0).toFixed(0)}{' '}
+						$
+					</p>
 				</div>
-				<div className='grid grid-cols-2'>
+				{/* <div className='grid grid-cols-2'>
 					<p>Status:</p>
 					<p
 						className={`${withdraw.status === 'approved' && 'text-green-500'} ${
@@ -30,15 +35,19 @@ const WithdrawDetails = ({ withdraw, withdrawDetails }) => {
 					>
 						{withdraw?.status}
 					</p>
-				</div>
+				</div> */}
 				{/* Withdraw Date */}
 				<div className='grid grid-cols-2'>
 					<p>Date:</p>
 					<p>{formatDate(withdraw?.createdAt)}</p>
 				</div>
 				<div className='grid grid-cols-2'>
-					<p>Method:</p>
-					<p>{withdraw?.method}</p>
+					<p>Wallet:</p>
+					<p>{withdraw?.wallet}</p>
+				</div>
+				<div className='grid grid-cols-2'>
+					<p>Wallet Address:</p>
+					<p>{withdraw?.address}</p>
 				</div>
 				{withdraw?.method === 'bank' && (
 					<>

@@ -52,8 +52,8 @@ const Withdraws = () => {
 			),
 		},
 		{
-			field: 'method',
-			headerName: 'Method',
+			field: 'wallet',
+			headerName: 'Wallet',
 			width: 150,
 		},
 		{
@@ -106,7 +106,7 @@ const Withdraws = () => {
 				email: withdraw.email,
 				date: formatDate(withdraw.createdAt),
 				amount: withdraw.amount,
-				method: withdraw.method,
+				wallet: withdraw.wallet,
 				status: withdraw.status,
 			});
 		});
