@@ -61,7 +61,7 @@ const Actions = ({
 					</Link>
 				)}
 				<Link
-					to={`/admin/${editRoute}/details/${id}`}
+					to={`/admin/${editRoute}/edit/${id}`}
 					ref={btnRef}
 					name='cancel'
 					className='p-1 text-orange-500 bg-red-100 rounded-full hover:bg-red-200'

@@ -28,19 +28,24 @@ const Carousel = () => {
 	};
 
 	return (
-		<div className='flex items-center px-1 py-4 rounded-md bg-slate-800'>
-			<AliceCarousel
-				mouseTracking
-				infinite
-				autoPlayInterval={1000}
-				animationDuration={1500}
-				disableDotsControls
-				disableButtonsControls
-				responsive={responsive}
-				items={items}
-				autoPlay
-			/>
-		</div>
+		<>
+			<div className='my-2 '>
+				<h2 className='text-center '>Earn and Offer</h2>
+			</div>
+			<div className='flex items-center px-1 py-4 rounded-md bg-slate-800'>
+				<AliceCarousel
+					mouseTracking
+					infinite
+					autoPlayInterval={1000}
+					animationDuration={1500}
+					disableDotsControls
+					disableButtonsControls
+					responsive={responsive}
+					items={items}
+					autoPlay
+				/>
+			</div>
+		</>
 	);
 };
 

@@ -205,7 +205,7 @@ const EditUser = () => {
 											<li>
 												{Number(bonus_balance).toLocaleString('en-US', {
 													style: 'currency',
-													currency: 'BDT',
+													currency: 'usd',
 												})}
 											</li>
 										</div>
@@ -220,7 +220,7 @@ const EditUser = () => {
 											<li>
 												{Number(withdrawal_balance).toLocaleString('en-US', {
 													style: 'currency',
-													currency: 'BDT',
+													currency: 'usd',
 												})}
 											</li>
 										</div>
@@ -237,7 +237,7 @@ const EditUser = () => {
 													sponsor_bonus ? sponsor_bonus : 0
 												).toLocaleString('en-US', {
 													style: 'currency',
-													currency: 'BDT',
+													currency: 'usd',
 												})}
 											</li>
 										</div>
@@ -254,7 +254,7 @@ const EditUser = () => {
 													'en-US',
 													{
 														style: 'currency',
-														currency: 'BDT',
+														currency: 'usd',
 													}
 												)}
 											</li>
@@ -272,7 +272,7 @@ const EditUser = () => {
 													winning_balance ? winning_balance : 0
 												).toLocaleString('en-US', {
 													style: 'currency',
-													currency: 'BDT',
+													currency: 'usd',
 												})}
 											</li>
 										</div>
@@ -288,7 +288,7 @@ const EditUser = () => {
 													total_receive_amount ? total_receive_amount : 0
 												).toLocaleString('en-US', {
 													style: 'currency',
-													currency: 'BDT',
+													currency: 'usd',
 												})}
 											</li>
 										</div>
@@ -306,7 +306,7 @@ const EditUser = () => {
 															sendDetails?.total_send_amount
 														).toLocaleString('en-US', {
 															style: 'currency',
-															currency: 'BDT',
+															currency: 'usd',
 														})}
 													</li>
 												</div>
@@ -327,7 +327,7 @@ const EditUser = () => {
 															convertDetails?.total_convert
 														).toLocaleString('en-US', {
 															style: 'currency',
-															currency: 'BDT',
+															currency: 'usd',
 														})}
 													</li>
 												</div>
@@ -346,7 +346,7 @@ const EditUser = () => {
 															depositDetails?.total_deposit
 														).toLocaleString('en-US', {
 															style: 'currency',
-															currency: 'BDT',
+															currency: 'usd',
 														})}
 													</li>
 												</div>
@@ -366,7 +366,7 @@ const EditUser = () => {
 															withdrawDetails?.total_withdraw
 														).toLocaleString('en-US', {
 															style: 'currency',
-															currency: 'BDT',
+															currency: 'usd',
 														})}
 													</li>
 												</div>

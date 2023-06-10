@@ -21,22 +21,22 @@ const data = [
 		id: 3,
 		title: 'April 2023',
 		description: [
-			'GEMCOIN (GMC) Prices Upgraded, Smart Contact program create. GMC BNB Smart Chain token &amp; Polygon token Generated. Direct Wallet Connect. Pancakaswap listing, GMC Swap Opening &amp; Others Way Swap Ready.',
+			'GEMCOIN (GMC) Prices Upgraded, Smart Contact program create. GMC BNB Smart Chain token.  Polygon token Generated. Direct Wallet Connect. Pancakaswap listing, GMC Swap Opening Others Way Swap Ready.',
 		],
 	},
 	{
 		id: 4,
 		title: 'May & June 2023 ',
 		description: [
-			'GEMCOIN (GMC) Wallet Launching. GMC Marketing. All social site &amp; Google play store. Billboard, Banner, Video Clip etc.',
-			'Listing CoinMarketCap, CoinGecko, MotherCoinMarket &amp; Others listing Platform.',
+			'GEMCOIN (GMC) Wallet Launching. GMC Marketing. All social site  Google play store. Billboard, Banner, Video Clip etc.',
+			'Listing CoinMarketCap, CoinGecko, MotherCoinMarket . Others listing Platform.',
 		],
 	},
 	{
 		id: 5,
 		title: 'July 2023',
 		description: [
-			'GEMCOIN (GMC) Support Mother Wallet &amp; Mother Exchange &amp; MotherCoinMarket Send Received Coin &amp; Mobile App. ',
+			'GEMCOIN (GMC) Support Mother Wallet . Mother Exchange , MotherCoinMarket Send Received Coin , Mobile App. ',
 			'GEMCOIN (GMC) Support MotherNFT Marketplace. MEDIA NFTs Launching.',
 		],
 	},
@@ -44,36 +44,36 @@ const data = [
 		id: 6,
 		title: 'August 2023',
 		description: [
-			'GEMCOIN (GMC) Wallet Marketing, Announcement Free Airdrop &amp; Giveaways Distribution.',
+			'GEMCOIN (GMC) Wallet Marketing, Announcement Free Airdrop  Giveaways Distribution.',
 		],
 	},
 	{
 		id: 7,
 		title: 'September 2023',
 		description: [
-			' GMC Face to Face Buy Sell and Withdraw any Currency &amp; Cryptocurrencys Exchange. C2C Platform. Direct Clint to Counter Base.',
+			' GMC Face to Face Buy Sell and Withdraw any Currency  Cryptocurrencys Exchange. C2C Platform. Direct Clint to Counter Base.',
 		],
 	},
 	{
 		id: 8,
 		title: 'October 2023',
 		description: [
-			'GEMCOIN (GMC) All Process Modified. All Business &amp; Investor, Cashback, FDR GMC Holder 5 Director Selected &amp;Joining Head Office in Dubai. ',
+			'GEMCOIN (GMC) All Process Modified. All Business  Investor, Cashback, FDR GMC Holder 5 Director Selected Joining Head Office in Dubai. ',
 		],
 	},
 	{
 		id: 9,
 		title: 'November 2023',
 		description: [
-			'GMC Partner, Merchant Buyer, Sole Agent, Distributor, Marketing, Meeting &amp; Price Distribution in Dubai Invitation.',
-			'GMC Others Platform getup Ready in License &amp; Others.',
+			'GMC Partner, Merchant Buyer, Sole Agent, Distributor, Marketing, Meeting  Price Distribution in Dubai Invitation.',
+			'GMC Others Platform getup Ready in License  Others.',
 		],
 	},
 	{
 		id: 10,
 		title: 'December 2023',
 		description: [
-			'GEMCOIN (GMC) Exchange Listing Mother, Binance, KuCoin, MEXC &amp; World top 10 Exchange. ',
+			'GEMCOIN (GMC) Exchange Listing Mother, Binance, KuCoin, MEXC  World top 10 Exchange. ',
 			'Our Target is 3 Million Mining Users. GMC Will be exclusively listed and prepared for buy-sale as soon as the target is fulfilled.',
 		],
 	},
